@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@import url('../general/general.css');
+
+button {
+  /* Убирает все свойства (в том числе рамки, фоны, отступы, шрифты и пр.) */
+  all: unset;
+
+  /* Отключаем родное оформление в WebKit/Blink */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Возвращаем display, иначе кнопка станет inline по умолчанию */
+  display: inline-block;
+
+  /* Ваша базовая настройка курсора */
+  cursor: pointer;
+
+  /* Чтобы при сбросе не слетали размеры шрифта и высота строки */
+  font: inherit;
+  line-height: inherit;
+}
+.headMenuBox {
+    display: flex;
+    justify-content: space-between;
+    background: var(--theme-theme-background);
+    border-bottom: 1px solid var(--theme-theme-stroke);
+    
+    &_button {
+        padding: 16px 32px;
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-heading-foreground);
+        border-right: 1px solid var(--theme-theme-stroke);
+        
+    }
+    &_button__first {
+        border-left: 1px solid var(--theme-theme-stroke);
+    }
+}
