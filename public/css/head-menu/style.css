@@ -24,7 +24,7 @@ button {
 .headMenuBox {
   display: flex;
   justify-content: space-between;
-  background: var(--theme-theme-background);
+  background-color: transparent;
   border-bottom: 1px solid var(--theme-theme-stroke);
 }
 .headMenuBox_button {

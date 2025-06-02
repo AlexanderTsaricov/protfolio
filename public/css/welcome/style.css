@@ -1,4 +1,83 @@
 @import url("../general/general.css");
 body {
   background: var(--theme-theme-background);
+  background-image: url(../../image/backgroundBlure.png);
+  background-repeat: no-repeat;
+  background-size: 1067px;
+  background-position-x: right;
+  background-position-y: center;
+}
+
+.hello {
+  margin-right: 146px;
+}
+.hello_smallGreatings {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+}
+.hello_name {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 60px;
+  line-height: 110%;
+  color: var(--theme-heading-foreground);
+}
+.hello_profession {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 30px;
+  line-height: 140%;
+  color: var(--primitive-indigo-500);
+}
+.hello_smallText {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+}
+.hello__marginBottom {
+  margin-bottom: 75px;
+}
+.hello_linkGit {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--primitive-indigo-500);
+}
+.hello_linkGit__spanName {
+  color: var(--primitive-teal-400);
+}
+.hello_linkGit__exactly {
+  color: var(--theme-heading-foreground);
+}
+.hello_linkGit__link {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: var(--theme-link-foreground);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  max-width: 560px;
+}
+
+@media (max-width: 1100px) {
+  .content {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .code {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
