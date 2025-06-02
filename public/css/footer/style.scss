@@ -1,0 +1,39 @@
+@import url("../general/general.css");
+.footerBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--theme-theme-stroke);
+    &_leftBox {
+        display: flex;
+    }
+    &_text {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+        display: flex;
+        align-items: center;
+        padding: 16px;
+    }
+    &_link {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+        display: flex;
+        align-items: center;
+        padding: 16px;
+    }
+    &__borderLeft {
+        border-left: 1px solid var(--theme-theme-stroke);
+    }
+    &__borderRight {
+        border-right: 1px solid var(--theme-theme-stroke);
+    }
+    &_svg {
+        max-width: 24px;
+    }
+}

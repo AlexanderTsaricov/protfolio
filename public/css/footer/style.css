@@ -1,0 +1,39 @@
+@import url("../general/general.css");
+.footerBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--theme-theme-stroke);
+}
+.footerBox_leftBox {
+  display: flex;
+}
+.footerBox_text {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.footerBox_link {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.footerBox__borderLeft {
+  border-left: 1px solid var(--theme-theme-stroke);
+}
+.footerBox__borderRight {
+  border-right: 1px solid var(--theme-theme-stroke);
+}
+.footerBox_svg {
+  max-width: 24px;
+}/*# sourceMappingURL=style.css.map */

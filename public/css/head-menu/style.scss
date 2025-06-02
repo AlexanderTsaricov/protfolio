@@ -39,7 +39,8 @@ button {
         border-right: 1px solid var(--theme-theme-stroke);
         
     }
-    &_button__first {
+    &_button__last {
         border-left: 1px solid var(--theme-theme-stroke);
+        border-right: none;
     }
 }
