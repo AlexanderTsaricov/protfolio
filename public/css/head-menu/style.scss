@@ -37,10 +37,15 @@ button {
         line-height: 150%;
         color: var(--theme-heading-foreground);
         border-right: 1px solid var(--theme-theme-stroke);
+        &__active  {
+            border-bottom: 3px solid var(--primary-background);
+        }
         
     }
     &_button__last {
         border-left: 1px solid var(--theme-theme-stroke);
         border-right: none;
     }
+
+
 }

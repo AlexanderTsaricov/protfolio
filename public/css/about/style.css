@@ -1,0 +1,8 @@
+body {
+  background: var(--theme-theme-background);
+  background-image: url(../../image/backgroundBlure.png);
+  background-repeat: no-repeat;
+  background-size: 1067px;
+  background-position-x: right;
+  background-position-y: center;
+}/*# sourceMappingURL=style.css.map */
