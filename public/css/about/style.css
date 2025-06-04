@@ -1,3 +1,11 @@
+@import url("../general/general.css");
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: var(--theme-theme-background);
   background-image: url(../../image/backgroundBlure.png);
@@ -5,4 +13,30 @@ body {
   background-size: 1067px;
   background-position-x: right;
   background-position-y: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 12px 22px;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  border-right: 1px solid var(--theme-theme-stroke);
+}
+
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+}
+
+.selectedContentBox {
+  border-left: 1px solid var(--theme-theme-stroke);
 }/*# sourceMappingURL=style.css.map */

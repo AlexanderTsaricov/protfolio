@@ -1,0 +1,29 @@
+@import url("../general/general.css");
+.personalInfoBlock {
+  height: 100%;
+}
+.personalInfoBlock_detailsHead {
+  cursor: pointer;
+}
+.personalInfoBlock_detailsHead__borderTop {
+  border-top: 1px solid var(--theme-theme-stroke);
+}
+.personalInfoBlock_summaryHead {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--primitive-slate-50);
+  border-bottom: 1px solid var(--theme-theme-stroke);
+  padding: 12px 24px;
+}
+.personalInfoBlock_headBox {
+  padding: 12px 24px;
+}
+.personalInfoBlock_summary {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+}/*# sourceMappingURL=style.css.map */
