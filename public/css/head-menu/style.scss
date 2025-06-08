@@ -3,32 +3,32 @@
     margin: 0;
 }
 
-@import url('../general/general.css');
+@import url("../general/general.css");
 
 button {
-  /* Убирает все свойства (в том числе рамки, фоны, отступы, шрифты и пр.) */
-  all: unset;
+    /* Убирает все свойства (в том числе рамки, фоны, отступы, шрифты и пр.) */
+    all: unset;
 
-  /* Отключаем родное оформление в WebKit/Blink */
-  -webkit-appearance: none;
-  appearance: none;
+    /* Отключаем родное оформление в WebKit/Blink */
+    -webkit-appearance: none;
+    appearance: none;
 
-  /* Возвращаем display, иначе кнопка станет inline по умолчанию */
-  display: inline-block;
+    /* Возвращаем display, иначе кнопка станет inline по умолчанию */
+    display: inline-block;
 
-  /* Ваша базовая настройка курсора */
-  cursor: pointer;
+    /* Ваша базовая настройка курсора */
+    cursor: pointer;
 
-  /* Чтобы при сбросе не слетали размеры шрифта и высота строки */
-  font: inherit;
-  line-height: inherit;
+    /* Чтобы при сбросе не слетали размеры шрифта и высота строки */
+    font: inherit;
+    line-height: inherit;
 }
 .headMenuBox {
     display: flex;
     justify-content: space-between;
     background-color: transparent;
     border-bottom: 1px solid var(--theme-theme-stroke);
-    
+
     &_button {
         padding: 16px 32px;
         font-family: var(--font-family);
@@ -37,15 +37,12 @@ button {
         line-height: 150%;
         color: var(--theme-heading-foreground);
         border-right: 1px solid var(--theme-theme-stroke);
-        &__active  {
+        &__active {
             border-bottom: 3px solid var(--primary-background);
         }
-        
     }
     &_button__last {
         border-left: 1px solid var(--theme-theme-stroke);
         border-right: none;
     }
-
-
 }

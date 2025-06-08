@@ -1,0 +1,25 @@
+.educationBox {
+    &_ol {
+        list-style-position: inside;
+        padding-left: 0;
+        counter-reset: edu;
+    }
+    &_li {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+        display: flex;
+        align-items: flex-start;
+    }
+    &_li::before {
+        counter-increment: edu;
+        content: counter(edu) ".";
+        min-width: 40px;
+        text-align: right;
+        margin-right: 40px;
+        display: inline-block;
+        color: var(--theme-foreground);
+    }
+}

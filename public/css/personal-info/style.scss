@@ -19,7 +19,6 @@
     }
     &_headBox {
         padding: 12px 24px;
-        
     }
     &_summary {
         font-family: var(--font-family);
@@ -27,5 +26,45 @@
         font-size: 16px;
         line-height: 150%;
         color: var(--theme-foreground);
+        &__active {
+            font-family: var(--font-family);
+            font-weight: 450;
+            font-size: 16px;
+            line-height: 150%;
+            color: var(--theme-heading-foreground);
+        }
+    }
+    &_contacts {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+        margin-bottom: 8px;
+        cursor: copy;
+    }
+}
+
+.tabBox {
+    border-left: 1px solid var(--theme-theme-stroke);
+    max-width: 242px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:first-child {
+        border-left: none;
+    }
+    border-bottom: 1px solid var(--theme-theme-stroke);
+    border-right: 1px solid var(--theme-theme-stroke);
+    &_text {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+    }
+    &_close {
+        cursor: pointer;
     }
 }

@@ -13,7 +13,7 @@
             </svg>
         </a>
         <a class="footerBox_link footerBox__borderLeft footerBox__borderRight" href="https://t.me/salispiligrim">
-            <img class="footerBox_svg" src="../icons/telegram-icon.svg" alt="telegram">
+            <img class="footerBox_svg" src="../../icons/telegram-icon.svg" alt="telegram">
         </a>
     </div>
     <div class="footerBox_rightBox">

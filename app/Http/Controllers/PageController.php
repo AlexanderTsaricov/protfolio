@@ -11,8 +11,8 @@ class PageController extends Controller
         return view('welcome');
     }
 
-    public function about()
+    public function about($selectedMenu)
     {
-        return view('about');
+        return view('about', ['selectedMenu' => $selectedMenu]);
     }
 }

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('head-menu')
+    @include('components.head-menu')
     <main class="content">
         <div class="hello">
             <p class="hello_smallGreatings">Hi all, I am</p>
@@ -31,7 +31,7 @@
             <img class="code" src="../image/code.png" alt="code">
         </div>
     </main>
-    @include('footer')
+    @include('components.footer')
 </body>
 
 </html>
