@@ -11,3 +11,4 @@ Route::get('/about/{selectedMenu}', [PageController::class, 'about']);
 
 Route::get('/getContent/{selectedContentName}', [ContentController::class, 'getContentView']);
 Route::get('/getContent/codes', [ContentController::class, 'codeSnippets']);
+Route::patch('/content/code-snippet/{id}', [ContentController::class, 'updateStars']);

@@ -26,8 +26,8 @@ class ContentController extends Controller
         $chunks[$index] = '';
         foreach ($words as $word) {
             $chunks[$index] .= $word . ' ';
-            if (strlen($chunks[$index]) >$countLetters) {
-                $index+=1;
+            if (strlen($chunks[$index]) > $countLetters) {
+                $index += 1;
                 $chunks[$index] = '';
             }
         }
@@ -36,7 +36,7 @@ class ContentController extends Controller
     }
 
     private function getContentText($selectedContentName = null)
-    {   
+    {
         if ($selectedContentName == null) {
             return null;
         }
@@ -66,5 +66,12 @@ class ContentController extends Controller
     {
         $codes = CodeSnippet::all();
         return response()->json($codes, 200);
+    }
+
+    public function updateStars($id)
+    {
+        $snippet = CodeSnippet::findOrFail($id);
+        $snippet->increment('stars'); 
+        return response()->json(['stars' => $snippet->stars], 200);
     }
 }

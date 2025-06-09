@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 .codeBox_information {
   font-family: var(--font-family);
@@ -9,6 +10,9 @@
   font-size: 14px;
   line-height: 140%;
   color: var(--theme-foreground);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .codeBox_code {
   border: 1px solid var(--theme-theme-stroke);
@@ -28,4 +32,9 @@
 }
 .codeBox_code em {
   color: var(--primitive-orange-300);
+}
+.codeBox_star {
+  fill: var(--theme-foreground);
+  padding-bottom: 3px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
