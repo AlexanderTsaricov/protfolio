@@ -10,3 +10,4 @@ Route::get('/', [PageController::class, 'hello']);
 Route::get('/about/{selectedMenu}', [PageController::class, 'about']);
 
 Route::get('/getContent/{selectedContentName}', [ContentController::class, 'getContentView']);
+Route::get('/getContent/codes', [ContentController::class, 'codeSnippets']);

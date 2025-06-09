@@ -51,7 +51,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--theme-theme-stroke);
   border-right: 1px solid var(--theme-theme-stroke);
 }
 .tabBox:first-child {
@@ -63,6 +62,7 @@
   font-size: 16px;
   line-height: 150%;
   color: var(--theme-foreground);
+  margin-right: 50px;
 }
 .tabBox_close {
   cursor: pointer;

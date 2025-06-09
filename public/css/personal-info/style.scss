@@ -55,7 +55,7 @@
     &:first-child {
         border-left: none;
     }
-    border-bottom: 1px solid var(--theme-theme-stroke);
+    // border-bottom: 1px solid var(--theme-theme-stroke);
     border-right: 1px solid var(--theme-theme-stroke);
     &_text {
         font-family: var(--font-family);
@@ -63,6 +63,7 @@
         font-size: 16px;
         line-height: 150%;
         color: var(--theme-foreground);
+        margin-right: 50px;
     }
     &_close {
         cursor: pointer;

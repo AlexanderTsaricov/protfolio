@@ -38,15 +38,23 @@ body {
 }
 .selectedContentBox {
     border-left: 1px solid var(--theme-theme-stroke);
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+    display: grid;
+    grid-template-areas:
+        "tabs tabs"
+        "content snippet";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
+    width: 100%;
     &_content {
         flex: 1 1 auto;
         min-height: 0;
         overflow-y: auto;
-        padding: 12px 40px;
+        padding: 12px 15px;
+        grid-area: content;
+        overflow-y: auto;
+        min-height: 0;
+        gap: 0;
 
         &::-webkit-scrollbar {
             width: 6px;
@@ -66,6 +74,35 @@ body {
         /* For Firefox */
         scrollbar-width: thin;
         scrollbar-color: #62748e transparent;
+    }
+
+    &_tabs {
+        border-bottom: 1px solid var(--theme-theme-stroke);
+        min-height: 48px;
+        grid-area: tabs;
+        display: flex;
+    }
+
+    &_codeSnippetBox {
+        grid-area: snippet;
+        width: 300px; // или нужную вам ширину
+        border-left: 1px solid var(--theme-theme-stroke);
+        padding: 12px 40px;
+    }
+
+    &_headerText {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+    }
+
+    &_codesBox {
+        margin-top: 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
     }
 }
 

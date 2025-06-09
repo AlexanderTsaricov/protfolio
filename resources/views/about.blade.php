@@ -25,9 +25,8 @@
                             4.5V20.5C22.5 20.7652 22.3946 21.0196 22.2071 21.2071C22.0196 21.3946 21.7652 21.5 21.5 21.5H3.5C3.23478
                             21.5 2.98043 21.3946 2.79289 21.2071C2.60536 21.0196 2.5 20.7652 2.5 20.5V4.5C2.5 4.23478 2.60536 3.98043
                             2.79289 3.79289C2.98043 3.60536 3.23478 3.5 3.5 3.5ZM12.5 15.5V17.5H18.5V15.5H12.5ZM8.914 12.5L6.086 15.328L7.
-                            5 16.743L11.743 12.5L7.5 8.257L6.086 9.672L8.914 12.5Z" 
-                            fill="@if (request()->segment(2) == 'professional-info') #CAD5E2 @else #62748E @endif" 
-                        />
+                            5 16.743L11.743 12.5L7.5 8.257L6.086 9.672L8.914 12.5Z"
+                            fill="@if (request()->segment(2) == 'professional-info') #CAD5E2 @else #62748E @endif" />
                     </g>
                     <defs>
                         <clipPath id="clip0_26533_3705">
@@ -64,9 +63,8 @@
                             20.5H7.5C5.9087 20.5 4.38258 19.8679 3.25736 18.7426C2.13214 17.6174 1.5 16.0913
                             1.5 14.5V10.5C1.5 8.9087 2.13214 7.38258 3.25736 6.25736C4.38258 5.13214 5.9087
                             4.5 7.5 4.5H17.5ZM10.5 9.5H8.5V11.5H6.5V13.5H8.499L8.5 15.5H10.5L10.499 13.5H12.5V11.5H10.5V9.5ZM18.5 1
-                            3.5H16.5V15.5H18.5V13.5ZM16.5 9.5H14.5V11.5H16.5V9.5Z" 
-                            fill="@if (request()->segment(2) == 'hobbies') #CAD5E2 @else #62748E @endif" 
-                        />
+                            3.5H16.5V15.5H18.5V13.5ZM16.5 9.5H14.5V11.5H16.5V9.5Z"
+                            fill="@if (request()->segment(2) == 'hobbies') #CAD5E2 @else #62748E @endif" />
                     </g>
                     <defs>
                         <clipPath id="clip0_26533_3742">
@@ -84,6 +82,14 @@
                 <div class="selectedContentBox_tabs" id="contentTabs">
                 </div>
                 <div class="selectedContentBox_content" id="contentBox">
+                </div>
+                <div class="selectedContentBox_codeSnippetBox">
+                    <h4 class="selectedContentBox_headerText">// Code snippet showcase:</h4>
+                    <div class="selectedContentBox_codesBox">
+                        @foreach ($codes as $code)
+                            @include('components.code-snippet', ['code' => $code])
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

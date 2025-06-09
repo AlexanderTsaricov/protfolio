@@ -1,0 +1,31 @@
+.codeBox_informationBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.codeBox_information {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--theme-foreground);
+}
+.codeBox_code {
+  border: 1px solid var(--theme-theme-stroke);
+  border-radius: 16px;
+  padding: 16px;
+  background: var(--theme-theme-backdrop);
+}
+.codeBox_code pre {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--theme-foreground);
+}
+.codeBox_code strong {
+  color: var(--primitive-rose-300);
+}
+.codeBox_code em {
+  color: var(--primitive-orange-300);
+}/*# sourceMappingURL=style.css.map */

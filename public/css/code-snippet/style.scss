@@ -1,0 +1,34 @@
+.codeBox {
+    &_informationBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_information {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 140%;
+        color: var(--theme-foreground);
+    }
+    &_code {
+        border: 1px solid var(--theme-theme-stroke);
+        border-radius: 16px;
+        padding: 16px;
+        background: var(--theme-theme-backdrop);
+        & pre {
+            font-family: var(--font-family);
+            font-weight: 450;
+            font-size: 14px;
+            line-height: 140%;
+            color: var(--theme-foreground);
+        }
+        & strong {
+            color: var(--primitive-rose-300);
+        }
+
+        & em {
+            color: var(--primitive-orange-300);
+        }
+    }
+}

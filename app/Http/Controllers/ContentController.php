@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CodeSnippet;
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -17,13 +18,18 @@ class ContentController extends Controller
      * @param int $countWords - count of words in one parts
      * @return string[]
      */
-    private function separateTextToArray(String $text, Int $countWords)
+    private function separateTextToArray(String $text, int $countLetters)
     {
         $words = preg_split('/\s+/', trim($text));
         $chunks = [];
-        for ($i = 0; $i < count($words); $i += $countWords) {
-            $chunk = array_slice($words, $i, $countWords);
-            $chunks[] = implode(' ', $chunk);
+        $index = 0;
+        $chunks[$index] = '';
+        foreach ($words as $word) {
+            $chunks[$index] .= $word . ' ';
+            if (strlen($chunks[$index]) >$countLetters) {
+                $index+=1;
+                $chunks[$index] = '';
+            }
         }
 
         return $chunks;
@@ -41,7 +47,7 @@ class ContentController extends Controller
                 I’m actively working on personal projects—such as a mobile expense-tracking app and a hookah-flavor randomizer. 
                 These projects help me solidify my skills and learn to solve real-world problems independently. Before transitioning into IT, 
                 I spent nine years working at a factory, where I handled claims and contract documentation, 
-                traveled on business trips (including abroad), and performed equipment repairs. 
+                traveled on business trips (including abroad), and performed equipment repairs.
                 That experience taught me how to build communication quickly, work effectively in a team, 
                 and adapt to new conditions—qualities I already apply when developing my own applications and learning new technologies.
                 In my free time, I enjoy computer games and occasionally create small “mods” or scripts for them to broaden my programming horizons. 
@@ -53,6 +59,12 @@ class ContentController extends Controller
 
         ];
 
-        return $this->separateTextToArray($content[$selectedContentName], 6);
+        return $this->separateTextToArray($content[$selectedContentName], 40);
+    }
+
+    public function codeSnippets()
+    {
+        $codes = CodeSnippet::all();
+        return response()->json($codes, 200);
     }
 }
