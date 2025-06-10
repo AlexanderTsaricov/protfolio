@@ -2,40 +2,53 @@ document.addEventListener("DOMContentLoaded", function () {
     const educationButton = document.querySelector("#educationButton");
     const contentTabs = document.querySelector("#contentTabs");
     const contentTabsNames = [];
-    const contentObject = {};
+    const contentObject = {
+        null: "",
+    };
+
     const contentBox = document.querySelector("#contentBox");
+    let activeContentName = "";
 
     educationButton.addEventListener("click", function () {
         if (!contentTabsNames.includes("education")) {
             fetchContent(contentObject, "education", function () {
-                updateContentBox(contentObject, contentBox, 'education');
+                updateContentBox(contentObject, contentBox, "education");
+                activeContentName = "education";
             });
             educationButton.className = "personalInfoBlock_summary__active";
             contentTabsNames.push("education");
             updateTabs(contentTabsNames, contentTabs);
 
-            const tabCloseButton = document.querySelector("#tabClose_education");
-            tabCloseButton.addEventListener('click', function () {
-                const index = contentTabsNames.indexOf('education');
+            const tabCloseButton = document.querySelector(
+                "#tabClose_education"
+            );
+            tabCloseButton.addEventListener("click", function () {
+                const index = contentTabsNames.indexOf("education");
                 if (index !== -1) {
                     contentTabsNames.splice(index, 1);
                 }
                 updateTabs(contentTabsNames, contentTabs);
+                if (activeContentName == "education") {
+                    updateContentBox(contentObject, contentBox, "null");
+                }
             });
-
         }
     });
 });
 
 function fetchContent(contentObject, contentName, callbackUpdate) {
-    fetch(`/getContent/${contentName}`)
-        .then((res) => res.text())
-        .then((html) => {
-            contentObject[contentName] = html;
-        })
-        .then(function () {
-            callbackUpdate();
-        });
+    if (!contentObject.hasOwnProperty(contentName)) {
+        fetch(`/getContent/${contentName}`)
+            .then((res) => res.text())
+            .then((html) => {
+                contentObject[contentName] = html;
+            })
+            .then(function () {
+                callbackUpdate();
+            });
+    } else {
+        callbackUpdate();
+    }
 }
 
 function updateTabs(tabsArrays, contentTabs) {

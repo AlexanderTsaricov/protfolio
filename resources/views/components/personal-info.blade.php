@@ -7,6 +7,12 @@
             </details>
             <details class="personalInfoBlock_details">
                 <summary class="personalInfoBlock_summary" id="educationButton">education</summary>
+                <div class="personalInfoBlock_smallBox">
+                    <p class="personalInfoBlock_summary" id="schoolButton">School</p>
+                    <p class="personalInfoBlock_summary" id="schoolCollege">College</p>
+                    <p class="personalInfoBlock_summary" id="schoolUniversity">Univerity</p>
+                    <p class="personalInfoBlock_summary" id="schoolCourses">Courses</p>
+                </div>
             </details>
         </div>
     </details>
