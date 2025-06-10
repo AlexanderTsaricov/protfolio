@@ -26,12 +26,17 @@
         font-size: 16px;
         line-height: 150%;
         color: var(--theme-foreground);
+        margin-bottom: 8px;
         &__active {
             font-family: var(--font-family);
             font-weight: 450;
             font-size: 16px;
             line-height: 150%;
             color: var(--theme-heading-foreground);
+            margin-bottom: 8px;
+        }
+        &__span {
+            padding-left: 12px;
         }
     }
     &_contacts {
@@ -42,6 +47,9 @@
         color: var(--theme-foreground);
         margin-bottom: 8px;
         cursor: copy;
+    }
+    &_smallBox {
+        margin-left: 29px;
     }
 }
 
@@ -68,4 +76,12 @@
     &_close {
         cursor: pointer;
     }
+}
+
+#svgEducation {
+    fill: var(--primitive-indigo-500);
+}
+
+#svgIntrests {
+    fill: var(--primitive-teal-400);
 }
