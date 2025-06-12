@@ -95,6 +95,7 @@
         </div>
     </main>
     @include('components.footer')
+    <script src="{{ asset('js/code-snippet.js') }}"></script>
 </body>
 
 </html>
