@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const educationButton = document.querySelector("#educationButton");
     const schoolButton = document.querySelector("#schoolButton");
-    const collegebutton = document.querySelector("#collegeButton");
+    const collegeButton = document.querySelector("#collegeButton");
+    const universityButton = document.querySelector("#universityButton");
+    const coursesButton = document.querySelector("#coursesButton");
     const state = {
         activeContentName: "",
         contentTabs: document.querySelector("#contentTabs"),
@@ -38,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     buttonEvent("education", educationButton, state);
     buttonEvent("school", schoolButton, state);
-    buttonEvent("college", collegebutton, state);
+    buttonEvent("college", collegeButton, state);
+    buttonEvent("university", universityButton, state);
+    buttonEvent("courses", coursesButton, state);
 });
 
 function buttonEvent(contentName, button, state) {
@@ -52,23 +56,6 @@ function buttonEvent(contentName, button, state) {
             updateTabs(state);
 
             setActiveTabs(contentName, state);
-            // const tabCloseButton = document.querySelector(
-            //     `#tabClose_${contentName}`
-            // );
-            // tabCloseButton.addEventListener("click", function () {
-            //     const index = state.contentTabsNames.indexOf(contentName);
-            //     if (index !== -1) {
-            //         state.contentTabsNames.splice(index, 1);
-            //     }
-            //     updateTabs(state);
-            //     if (state.activeContentName == contentName) {
-            //         updateContentBox("null", state);
-            //     }
-            //     if (state.activeContentName == contentName) {
-            //         state.activeContentName = "";
-            //     }
-            //     button.className = "personalInfoBlock_summary";
-            // });
         }
     });
 }

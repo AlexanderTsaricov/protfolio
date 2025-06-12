@@ -60,12 +60,24 @@ class ContentController extends Controller
                 It was here that I first felt an interest in programming and information technology. 
                 Although I did not study programming seriously during my school years, it was at that time that 
                 I realized this field was close to me and truly interesting.",
-            'college' => "After finishing school, I enrolled at the Ural Radio Engineering College (URTC), 
+            'college' => "I enrolled at the Ural Radio Engineering College (URTC), 
                 where I studied Radio Equipment Engineering. Initially, I considered switching to a programming-related field, 
                 but thanks to a friendly and inspiring group of classmates — and genuine interest in the technical subjects at 
                 first — I decided to stay and complete the program. My education at URTC gave me a solid technical foundation 
                 and a disciplined approach to learning. It also strengthened my confidence in my ability to create, understand systems, 
-                and solve problems — qualities that I later directed toward the field of programming"
+                and solve problems — qualities that I later directed toward the field of programming",
+            'university' => "After finishing school, I enrolled at the Ural State Forest Engineering University (UGLTU). 
+                However, after completing the first year, I realized that I had chosen the wrong path. The studies didn’t bring 
+                me any satisfaction, and it became increasingly clear that I was not in the right place. Instead of continuing to 
+                invest time in a field that didn’t resonate with me, I made the decision to withdraw. It wasn’t an easy choice, 
+                but it was an important step toward making a conscious decision about my future career. 
+                After that, I enrolled at the Ural Radio Technical College (URTK), where the education turned out to be much 
+                closer to my interests and became the starting point of my journey into programming.",
+            'courses' => "My journey into programming began in 2020 when I enrolled in programming courses. Unfortunately, 
+                I had to pause my studies due to work commitments. However, my interest in development never faded. In 2024, 
+                I resumed learning with renewed motivation and successfully completed the courses in 2025. 
+                The results of my learning are right in front of you — I built this website myself. 
+                You can also explore more of my work in the [“Projects”] section."
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);
