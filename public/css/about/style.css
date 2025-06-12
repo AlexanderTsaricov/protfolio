@@ -84,7 +84,6 @@ body {
 }
 .selectedContentBox_codeSnippetBox {
   grid-area: snippet;
-  width: 300px;
   border-left: 1px solid var(--theme-theme-stroke);
   padding: 12px 40px;
 }

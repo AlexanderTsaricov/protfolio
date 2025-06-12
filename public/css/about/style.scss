@@ -85,7 +85,6 @@ body {
 
     &_codeSnippetBox {
         grid-area: snippet;
-        width: 300px; // или нужную вам ширину
         border-left: 1px solid var(--theme-theme-stroke);
         padding: 12px 40px;
     }
