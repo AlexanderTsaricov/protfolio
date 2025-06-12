@@ -28,6 +28,7 @@ function buttonEvent(contentName, button, state) {
                 const tab = document.querySelector(`#tab_${tabName}`);
                 tab.addEventListener("click", function () {
                     setActiveTabs(tabName, state);
+                    setActiveContent(tabName, state);
                 });
             });
             setActiveTabs(contentName, state);
@@ -66,6 +67,10 @@ function setActiveTabs(newActiveContentName, state) {
         newActiveTab.className = "tabBox_text__active";
         state.activeContentName = newActiveContentName;
     }
+}
+
+function setActiveContent(newActiveContentName, state) {
+    state.contentBox.innerHTML = state.contentObject[newActiveContentName];
 }
 
 function fetchContent(state, contentName, callbackUpdate) {
