@@ -59,7 +59,13 @@ class ContentController extends Controller
             'school' => "I studied at MOE Secondary School No. 7 in the city of Sukhoy Log, Sverdlovsk Region. 
                 It was here that I first felt an interest in programming and information technology. 
                 Although I did not study programming seriously during my school years, it was at that time that 
-                I realized this field was close to me and truly interesting."
+                I realized this field was close to me and truly interesting.",
+            'college' => "After finishing school, I enrolled at the Ural Radio Engineering College (URTC), 
+                where I studied Radio Equipment Engineering. Initially, I considered switching to a programming-related field, 
+                but thanks to a friendly and inspiring group of classmates — and genuine interest in the technical subjects at 
+                first — I decided to stay and complete the program. My education at URTC gave me a solid technical foundation 
+                and a disciplined approach to learning. It also strengthened my confidence in my ability to create, understand systems, 
+                and solve problems — qualities that I later directed toward the field of programming"
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);

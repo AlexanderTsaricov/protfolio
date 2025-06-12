@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const educationButton = document.querySelector("#educationButton");
     const schoolButton = document.querySelector("#schoolButton");
+    const collegebutton = document.querySelector("#collegeButton");
     const state = {
         activeContentName: "",
         contentTabs: document.querySelector("#contentTabs"),
@@ -17,10 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
             setActiveTabs(id[1], state);
             setActiveContent(id[1], state);
         }
+
+        if (id[0] == "tabClose") {
+            const index = state.contentTabsNames.indexOf(id[1]);
+            if (index !== -1) {
+                state.contentTabsNames.splice(index, 1);
+            }
+            updateTabs(state);
+            if (state.activeContentName == id[1]) {
+                updateContentBox("null", state);
+            }
+            if (state.activeContentName == id[1]) {
+                state.activeContentName = "";
+            }
+            const button = document.querySelector(`#${id[1]}Button`);
+            button.className = "personalInfoBlock_summary";
+        }
     });
 
     buttonEvent("education", educationButton, state);
     buttonEvent("school", schoolButton, state);
+    buttonEvent("college", collegebutton, state);
 });
 
 function buttonEvent(contentName, button, state) {
@@ -34,23 +52,23 @@ function buttonEvent(contentName, button, state) {
             updateTabs(state);
 
             setActiveTabs(contentName, state);
-            const tabCloseButton = document.querySelector(
-                `#tabClose_${contentName}`
-            );
-            tabCloseButton.addEventListener("click", function () {
-                const index = state.contentTabsNames.indexOf(contentName);
-                if (index !== -1) {
-                    state.contentTabsNames.splice(index, 1);
-                }
-                updateTabs(state);
-                if (state.activeContentName == contentName) {
-                    updateContentBox("null", state);
-                }
-                if (state.activeContentName == contentName) {
-                    state.activeContentName = "";
-                }
-                button.className = "personalInfoBlock_summary";
-            });
+            // const tabCloseButton = document.querySelector(
+            //     `#tabClose_${contentName}`
+            // );
+            // tabCloseButton.addEventListener("click", function () {
+            //     const index = state.contentTabsNames.indexOf(contentName);
+            //     if (index !== -1) {
+            //         state.contentTabsNames.splice(index, 1);
+            //     }
+            //     updateTabs(state);
+            //     if (state.activeContentName == contentName) {
+            //         updateContentBox("null", state);
+            //     }
+            //     if (state.activeContentName == contentName) {
+            //         state.activeContentName = "";
+            //     }
+            //     button.className = "personalInfoBlock_summary";
+            // });
         }
     });
 }
