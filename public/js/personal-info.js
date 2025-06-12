@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const collegeButton = document.querySelector("#collegeButton");
     const universityButton = document.querySelector("#universityButton");
     const coursesButton = document.querySelector("#coursesButton");
+
+    const interestsButton = document.querySelector("#interestsButton");
+    const gamesButton = document.querySelector("#gamesButton");
+
     const state = {
         activeContentName: "",
         contentTabs: document.querySelector("#contentTabs"),
@@ -43,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonEvent("college", collegeButton, state);
     buttonEvent("university", universityButton, state);
     buttonEvent("courses", coursesButton, state);
+
+    buttonEvent("interests", interestsButton, state);
+    buttonEvent("games", gamesButton, state);
 });
 
 function buttonEvent(contentName, button, state) {

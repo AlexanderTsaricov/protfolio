@@ -77,7 +77,24 @@ class ContentController extends Controller
                 I had to pause my studies due to work commitments. However, my interest in development never faded. In 2024, 
                 I resumed learning with renewed motivation and successfully completed the courses in 2025. 
                 The results of my learning are right in front of you — I built this website myself. 
-                You can also explore more of my work in the [“Projects”] section."
+                You can also explore more of my work in the [“Projects”] section.",
+            'interests' => "I enjoy traveling and discovering new places and cultures. I've visited countries such as Serbia, 
+                Montenegro, India, Kazakhstan, Venezuela, and Egypt. I also travel within Russia from time to time — I've been to Moscow, 
+                Saint Petersburg, Perm, and other cities. Occasionally, I go hiking, although not very often. Another one of my passions 
+                is computer games, especially sandbox-style games. I’m particularly interested in the creative freedom they offer and 
+                the opportunity to experiment. In some of these games, I apply my programming knowledge to write in-game scripts. For example, 
+                in Space Engineers I write scripts in C#, and in Stationeers I use the built-in scripting language, which is similar to Lua. 
+                This hobby is not only fun but also helps me improve my logic and coding skills in unconventional scenarios.",
+            'games' => "As I mentioned in the “Interests” section, I often apply my programming skills in video games. For me, it's not just 
+                entertainment — it’s also a way to practice logic, work with APIs, and structure code effectively. For example, Space Engineers 
+                uses full-fledged C#. The game provides a built-in library that allows creating in-game scripts: combining blocks, filtering them 
+                by name and type, automatically sorting inventory. You can even program a bot to patrol and defend your base, or write code to make 
+                solar panels track the sun for maximum energy efficiency during the day. In Stationeers, the programming language is simpler, 
+                but it plays a crucial role in automation and efficient space management. This is a game where gases mix, heat up, and cool down 
+                according to the laws of physics. The goal is to build and maintain a working station on the Moon, Mars, or another planet. 
+                Programming allows you to manage life support, resource processing, ventilation, and many other systems — automating routine tasks 
+                and deepening interaction with the game world. These kinds of projects help me not only sharpen my technical skills, 
+                but also teach me to approach problems with an engineering and system-oriented mindset."
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);
