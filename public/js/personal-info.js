@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         contentBox: document.querySelector("#contentBox"),
     };
 
+    state.contentTabs.addEventListener("click", function (event) {
+        const id = event.target.id.split("_");
+        if (id[0] == "tab") {
+            setActiveTabs(id[1], state);
+            setActiveContent(id[1], state);
+        }
+    });
+
     buttonEvent("education", educationButton, state);
     buttonEvent("school", schoolButton, state);
 });
@@ -24,13 +32,7 @@ function buttonEvent(contentName, button, state) {
             button.className = "personalInfoBlock_summary__active";
             state.contentTabsNames.push(contentName);
             updateTabs(state);
-            state.contentTabsNames.forEach((tabName) => {
-                const tab = document.querySelector(`#tab_${tabName}`);
-                tab.addEventListener("click", function () {
-                    setActiveTabs(tabName, state);
-                    setActiveContent(tabName, state);
-                });
-            });
+
             setActiveTabs(contentName, state);
             const tabCloseButton = document.querySelector(
                 `#tabClose_${contentName}`
@@ -44,13 +46,16 @@ function buttonEvent(contentName, button, state) {
                 if (state.activeContentName == contentName) {
                     updateContentBox("null", state);
                 }
+                if (state.activeContentName == contentName) {
+                    state.activeContentName = "";
+                }
+                button.className = "personalInfoBlock_summary";
             });
         }
     });
 }
 
 function setActiveTabs(newActiveContentName, state) {
-    console.log(state);
     if (
         state.activeContentName != newActiveContentName &&
         state.contentTabsNames.includes(newActiveContentName)
