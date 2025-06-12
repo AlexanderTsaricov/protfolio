@@ -51,6 +51,14 @@
     &_smallBox {
         margin-left: 29px;
     }
+    &_elementBox {
+        display: flex;
+        align-items: center;
+    }
+    &_svg {
+        padding-bottom: 10px;
+        margin-right: 10px;
+    }
 }
 
 .tabBox {
@@ -72,6 +80,15 @@
         line-height: 150%;
         color: var(--theme-foreground);
         margin-right: 50px;
+        cursor: pointer;
+        &__active {
+            font-family: var(--font-family);
+            font-weight: 450;
+            font-size: 16px;
+            line-height: 150%;
+            margin-right: 50px;
+            color: var(--theme-heading-foreground);
+        }
     }
     &_close {
         cursor: pointer;

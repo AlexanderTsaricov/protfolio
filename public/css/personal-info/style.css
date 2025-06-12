@@ -51,6 +51,14 @@
 .personalInfoBlock_smallBox {
   margin-left: 29px;
 }
+.personalInfoBlock_elementBox {
+  display: flex;
+  align-items: center;
+}
+.personalInfoBlock_svg {
+  padding-bottom: 10px;
+  margin-right: 10px;
+}
 
 .tabBox {
   border-left: 1px solid var(--theme-theme-stroke);
@@ -71,6 +79,15 @@
   line-height: 150%;
   color: var(--theme-foreground);
   margin-right: 50px;
+  cursor: pointer;
+}
+.tabBox_text__active {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  margin-right: 50px;
+  color: var(--theme-heading-foreground);
 }
 .tabBox_close {
   cursor: pointer;

@@ -9,7 +9,7 @@ class ContentController extends Controller
 {
     public function getContentView($selectedContentName)
     {
-        return view('components.' . $selectedContentName, ['text' => $this->getContentText($selectedContentName)]);
+        return view('components.education', ['text' => $this->getContentText($selectedContentName)]);
     }
 
     /**
@@ -56,7 +56,10 @@ class ContentController extends Controller
                 I’m particularly interested in Full-Stack PHP-JS, but I’m open to any engaging tasks and technologies. 
                 I would welcome the chance to collaborate, learn from experienced colleagues, grow as a developer, 
                 and contribute to a project. If you have any offers or questions, I’d be happy to discuss them!",
-
+            'school' => "I studied at MOE Secondary School No. 7 in the city of Sukhoy Log, Sverdlovsk Region. 
+                It was here that I first felt an interest in programming and information technology. 
+                Although I did not study programming seriously during my school years, it was at that time that 
+                I realized this field was close to me and truly interesting."
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);
@@ -71,7 +74,7 @@ class ContentController extends Controller
     public function updateStars($id)
     {
         $snippet = CodeSnippet::findOrFail($id);
-        $snippet->increment('stars'); 
+        $snippet->increment('stars');
         return response()->json(['stars' => $snippet->stars], 200);
     }
 }
