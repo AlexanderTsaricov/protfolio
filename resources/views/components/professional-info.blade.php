@@ -93,6 +93,87 @@
                             </div>
                         </div>
                     </details>
+                    <details class="professionalInfoBlock_details">
+                        <summary class="professionalInfoBlock_summary" id="primaryLanguages">
+                            <span class="professionalInfoBlock_summary__span">
+                                <svg class="professionalInfoBlock_summary__svg" id="svgIntrests" width="14"
+                                    height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.6666 3.33333V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V2.66667H12.9999C13.3681 2.66667 13.6666 2.96515 13.6666 3.33333ZM7.27605 1.33333H0.333252V0.666667C0.333252 0.29848 0.631732 0 0.999919 0H5.94272L7.27605 1.33333Z" />
+                                </svg>
+                                Additional Languages
+                            </span>
+                        </summary>
+                        <div class="professionalInfoBlock_smallBox">
+                            <div class="professionalInfoBlock_elementBox">
+                                <summary class="professionalInfoBlock_summary" id="python">
+                                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.999919 0H12.9999C13.3681 0 13.6666 0.29848 13.6666 0.666667V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V0.666667C0.333252 0.29848 0.631732 0 0.999919 0ZM3.66659 8.33333V5.66667L4.99992 7L6.33325 5.66667V8.33333H7.66659V3.66667H6.33325L4.99992 5L3.66659 3.66667H2.33325V8.33333H3.66659ZM10.9999 6.33333V3.66667H9.66659V6.33333H8.33325L10.3333 8.33333L12.3333 6.33333H10.9999Z"
+                                            fill="#62748E" />
+                                    </svg>
+                                    Python
+                                </summary>
+                            </div>
+                            <div class="professionalInfoBlock_elementBox">
+                                <summary class="professionalInfoBlock_summary" id="cSharp">
+                                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.999919 0H12.9999C13.3681 0 13.6666 0.29848 13.6666 0.666667V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V0.666667C0.333252 0.29848 0.631732 0 0.999919 0ZM3.66659 8.33333V5.66667L4.99992 7L6.33325 5.66667V8.33333H7.66659V3.66667H6.33325L4.99992 5L3.66659 3.66667H2.33325V8.33333H3.66659ZM10.9999 6.33333V3.66667H9.66659V6.33333H8.33325L10.3333 8.33333L12.3333 6.33333H10.9999Z"
+                                            fill="#62748E" />
+                                    </svg>
+                                    C#
+                                </summary>
+                            </div>
+                            <div class="professionalInfoBlock_elementBox">
+                                <summary class="professionalInfoBlock_summary" id="swift">
+                                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.999919 0H12.9999C13.3681 0 13.6666 0.29848 13.6666 0.666667V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V0.666667C0.333252 0.29848 0.631732 0 0.999919 0ZM3.66659 8.33333V5.66667L4.99992 7L6.33325 5.66667V8.33333H7.66659V3.66667H6.33325L4.99992 5L3.66659 3.66667H2.33325V8.33333H3.66659ZM10.9999 6.33333V3.66667H9.66659V6.33333H8.33325L10.3333 8.33333L12.3333 6.33333H10.9999Z"
+                                            fill="#62748E" />
+                                    </svg>
+                                    Swift
+                                </summary>
+                            </div>
+                            <div class="professionalInfoBlock_elementBox">
+                                <summary class="professionalInfoBlock_summary" id="ruby">
+                                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.999919 0H12.9999C13.3681 0 13.6666 0.29848 13.6666 0.666667V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V0.666667C0.333252 0.29848 0.631732 0 0.999919 0ZM3.66659 8.33333V5.66667L4.99992 7L6.33325 5.66667V8.33333H7.66659V3.66667H6.33325L4.99992 5L3.66659 3.66667H2.33325V8.33333H3.66659ZM10.9999 6.33333V3.66667H9.66659V6.33333H8.33325L10.3333 8.33333L12.3333 6.33333H10.9999Z"
+                                            fill="#62748E" />
+                                    </svg>
+                                    Ruby
+                                </summary>
+                            </div>
+                            <div class="professionalInfoBlock_elementBox">
+                                <summary class="professionalInfoBlock_summary" id="sql">
+                                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.999919 0H12.9999C13.3681 0 13.6666 0.29848 13.6666 0.666667V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V0.666667C0.333252 0.29848 0.631732 0 0.999919 0ZM3.66659 8.33333V5.66667L4.99992 7L6.33325 5.66667V8.33333H7.66659V3.66667H6.33325L4.99992 5L3.66659 3.66667H2.33325V8.33333H3.66659ZM10.9999 6.33333V3.66667H9.66659V6.33333H8.33325L10.3333 8.33333L12.3333 6.33333H10.9999Z"
+                                            fill="#62748E" />
+                                    </svg>
+                                    SQL
+                                </summary>
+                            </div>
+                            <div class="professionalInfoBlock_elementBox">
+                                <summary class="professionalInfoBlock_summary" id="visualBasic">
+                                    <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.999919 0H12.9999C13.3681 0 13.6666 0.29848 13.6666 0.666667V11.3333C13.6666 11.7015 13.3681 12 12.9999 12H0.999919C0.631732 12 0.333252 11.7015 0.333252 11.3333V0.666667C0.333252 0.29848 0.631732 0 0.999919 0ZM3.66659 8.33333V5.66667L4.99992 7L6.33325 5.66667V8.33333H7.66659V3.66667H6.33325L4.99992 5L3.66659 3.66667H2.33325V8.33333H3.66659ZM10.9999 6.33333V3.66667H9.66659V6.33333H8.33325L10.3333 8.33333L12.3333 6.33333H10.9999Z"
+                                            fill="#62748E" />
+                                    </svg>
+                                    Visual Basic 6.0
+                                </summary>
+                            </div>
+                        </div>
+                    </details>
                 </div>
             </details>
         </div>

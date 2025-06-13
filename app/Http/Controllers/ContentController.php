@@ -116,6 +116,14 @@ class ContentController extends Controller
             'php' => "I write server logic using Laravel. I work with Blade templates, Eloquent ORM, and build REST APIs and route controllers.",
             'java' => "I’ve explored Java through developing console and visual applications, gaining a general understanding 
                 of object-oriented design and application structure.",
+            'python' => "I explored basic syntax, variables, loops, and file operations. I’ve experimented with creating simple CLI tools and utility scripts",
+            'cSharp' => "Used for writing game scripts and automation in Space Engineers. I’ve worked with objects, loops, conditions, and core libraries",
+            'swift' => "Studied while integrating iOS builds in a cross-platform app using Capacitor. I gained insights into the structure 
+                of iOS projects and modules",
+            'ruby' => "Experimented with scripting and automation tasks. I became familiar with syntax, script structure, and file manipulation methods",
+            'sql' => "Used regularly in Laravel and Node.js projects for database work. I write queries such as SELECT, INSERT, 
+                and JOIN, and manage migrations and seeders",
+            'visualBasic' => "Explored out of curiosity about older technologies. I studied the development interface and basic procedural logic syntax."
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);

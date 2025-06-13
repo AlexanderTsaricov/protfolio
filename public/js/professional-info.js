@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const jsButton = document.querySelector("#javaScript");
     const phpButton = document.querySelector("#php");
     const javaButton = document.querySelector("#java");
+    const pythonButton = document.querySelector("#python");
+    const cSharpButton = document.querySelector("#cSharp");
+    const swiftButton = document.querySelector("#swift");
+    const rubyButton = document.querySelector("#ruby");
+    const sqlButton = document.querySelector("#sql");
+    const visualBasicButton = document.querySelector("#visualBasic");
 
     const state = {
         activeContentName: "",
@@ -27,4 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonEvent("javaScript", jsButton, state, globalInfoNameBlock);
     buttonEvent("php", phpButton, state, globalInfoNameBlock);
     buttonEvent("java", javaButton, state, globalInfoNameBlock);
+    buttonEvent("swift", swiftButton, state, globalInfoNameBlock);
+    buttonEvent("python", pythonButton, state, globalInfoNameBlock);
+    buttonEvent("cSharp", cSharpButton, state, globalInfoNameBlock);
+    buttonEvent("ruby", rubyButton, state, globalInfoNameBlock);
+    buttonEvent("sql", sqlButton, state, globalInfoNameBlock);
+    buttonEvent("visualBasic", visualBasicButton, state, globalInfoNameBlock);
 });
