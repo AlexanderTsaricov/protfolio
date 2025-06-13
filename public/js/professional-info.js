@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const frontendButton = document.querySelector("#frontendButton");
     const backendButton = document.querySelector("#backendButton");
+    const jsButton = document.querySelector("#javaScript");
+    const phpButton = document.querySelector("#php");
+    const javaButton = document.querySelector("#java");
 
     const state = {
         activeContentName: "",
@@ -21,4 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     buttonEvent("frontend", frontendButton, state, globalInfoNameBlock);
     buttonEvent("backend", backendButton, state, globalInfoNameBlock);
+    buttonEvent("javaScript", jsButton, state, globalInfoNameBlock);
+    buttonEvent("php", phpButton, state, globalInfoNameBlock);
+    buttonEvent("java", javaButton, state, globalInfoNameBlock);
 });

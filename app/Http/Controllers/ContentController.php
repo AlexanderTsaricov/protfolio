@@ -110,7 +110,12 @@ class ContentController extends Controller
                 I’ve implemented REST routing, CRUD operations, middleware, and controller logic. I use Composer and NPM for dependency management. 
                 I also developed some projects using raw PHP, creating server logic and basic database interactions. In Laravel, 
                 I’ve worked with built-in tools for authentication, validation, error handling, and testing. These experiences helped me gain a structured 
-                and practical approach to building full-featured back-end applications."
+                and practical approach to building full-featured back-end applications.",
+            'javaScript' => "Used in both front-end (Vue.js, React) and back-end (Node.js, Express). I use it for DOM manipulation, 
+                logic, working with APIs, and dynamic rendering.",
+            'php' => "I write server logic using Laravel. I work with Blade templates, Eloquent ORM, and build REST APIs and route controllers.",
+            'java' => "I’ve explored Java through developing console and visual applications, gaining a general understanding 
+                of object-oriented design and application structure.",
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);
