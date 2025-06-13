@@ -94,7 +94,23 @@ class ContentController extends Controller
                 according to the laws of physics. The goal is to build and maintain a working station on the Moon, Mars, or another planet. 
                 Programming allows you to manage life support, resource processing, ventilation, and many other systems — automating routine tasks 
                 and deepening interaction with the game world. These kinds of projects help me not only sharpen my technical skills, 
-                but also teach me to approach problems with an engineering and system-oriented mindset."
+                but also teach me to approach problems with an engineering and system-oriented mindset.",
+            'frontend' => "I actively use modern web technologies — HTML5, CSS3 (including SCSS), JavaScript, and popular UI frameworks. 
+                In the TabacooApp project, I developed a cross-platform mobile interface using Vue.js and Vite, with responsive layout and integration 
+                via Capacitor for deployment on Android and iOS. The app interacts with device features and includes custom UI components. 
+                I have also worked with React, creating interfaces based on component architecture, managing state, and applying SCSS styling. 
+                This gave me a clear understanding of React's ecosystem and modular development principles. In the Brand_site project, I applied clean HTML, 
+                CSS, and JavaScript, along with SCSS for flexible styling. I focused on responsive design, cross-browser compatibility, and BEM methodology 
+                for code organization. My portfolio website is built using Laravel with Blade templates, allowing me to generate server-side interfaces 
+                and style them using CSS and SCSS. This project reflects my experience in combining server and client logic.",
+            'backend' => "My back-end experience includes PHP (primarily with Laravel), Node.js, Express.js, SQL, and template engines like Blade 
+                and Handlebars. In Laravel projects, I’ve used the MVC architecture, Eloquent ORM, and worked with relational databases through migrations, 
+                seeders, and query building. The node.js_attestation project is based on Node.js, using Handlebars templates, server-side logic 
+                for data validation, form handling, and HTML generation. Data is managed in JSON structures, with styling handled via SCSS. 
+                I’ve implemented REST routing, CRUD operations, middleware, and controller logic. I use Composer and NPM for dependency management. 
+                I also developed some projects using raw PHP, creating server logic and basic database interactions. In Laravel, 
+                I’ve worked with built-in tools for authentication, validation, error handling, and testing. These experiences helped me gain a structured 
+                and practical approach to building full-featured back-end applications."
         ];
 
         return $this->separateTextToArray($content[$selectedContentName], 40);
