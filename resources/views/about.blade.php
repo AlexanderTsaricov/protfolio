@@ -38,17 +38,6 @@
                         fill="@if (request()->segment(2) == 'personal-info') #CAD5E2 @else #62748E @endif" />
                 </svg>
             </a>
-            <a href="/about/hobbies" class="leftMenu_button" id="hobbies">
-                <svg width="21" height="19" viewBox="0 0 23 17" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.5 0.5C18.0913 0.5 19.6174 1.13214 20.7426 2.25736C21.8679 3.38258 22.5 4.9087
-                    22.5 6.5V10.5C22.5 12.0913 21.8679 13.6174 20.7426 14.7426C19.6174 15.8679 18.0913 16.5 16.5
-                    16.5H6.5C4.9087 16.5 3.38258 15.8679 2.25736 14.7426C1.13214 13.6174 0.5 12.0913 0.5 10.5V6.5C0.5
-                    4.9087 1.13214 3.38258 2.25736 2.25736C3.38258 1.13214 4.9087 0.5 6.5 0.5H16.5ZM9.5 5.5H7.5V7.5H5.5V9.5H7.499L7.5
-                    11.5H9.5L9.499 9.5H11.5V7.5H9.5V5.5ZM17.5 9.5H15.5V11.5H17.5V9.5ZM15.5 5.5H13.5V7.5H15.5V5.5Z"
-                        fill="@if (request()->segment(2) == 'hobbies') #CAD5E2 @else #62748E @endif" /> />
-                </svg>
-            </a>
         </div>
         <div class="content">
             <div class="selectMenu">
