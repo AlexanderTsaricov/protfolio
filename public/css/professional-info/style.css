@@ -1,0 +1,105 @@
+@import url("../general/general.css");
+.professionalInfoBlock {
+  height: 100%;
+}
+.professionalInfoBlock_detailsHead {
+  cursor: pointer;
+}
+.professionalInfoBlock_detailsHead__borderTop {
+  border-top: 1px solid var(--theme-theme-stroke);
+}
+.professionalInfoBlock_summaryHead {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--primitive-slate-50);
+  border-bottom: 1px solid var(--theme-theme-stroke);
+  padding: 12px 24px;
+}
+.professionalInfoBlock_headBox {
+  padding: 12px 24px;
+}
+.professionalInfoBlock_summary {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  margin-bottom: 8px;
+}
+.professionalInfoBlock_summary__active {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-heading-foreground);
+  margin-bottom: 8px;
+}
+.professionalInfoBlock_summary__span {
+  padding-left: 12px;
+}
+.professionalInfoBlock_contacts {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  margin-bottom: 8px;
+  cursor: copy;
+}
+.professionalInfoBlock_smallBox {
+  margin-left: 29px;
+}
+.professionalInfoBlock_elementBox {
+  display: flex;
+  align-items: center;
+}
+.professionalInfoBlock_svg {
+  padding-bottom: 10px;
+  margin-right: 10px;
+}
+.professionalInfoBlock_box {
+  padding-left: 17px;
+}
+
+.tabBox {
+  border-left: 1px solid var(--theme-theme-stroke);
+  max-width: 242px;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px solid var(--theme-theme-stroke);
+}
+.tabBox:first-child {
+  border-left: none;
+}
+.tabBox_text {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  margin-right: 50px;
+  cursor: pointer;
+}
+.tabBox_text__active {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  margin-right: 50px;
+  color: var(--theme-heading-foreground);
+}
+.tabBox_close {
+  cursor: pointer;
+}
+
+#svgEducation {
+  fill: var(--primitive-indigo-500);
+}
+
+#svgIntrests {
+  fill: var(--primitive-teal-400);
+}/*# sourceMappingURL=style.css.map */

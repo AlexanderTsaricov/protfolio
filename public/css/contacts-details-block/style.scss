@@ -1,0 +1,33 @@
+@import url("../general/general.css");
+.contactsBlock {
+    &_summaryHead {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--primitive-slate-50);
+        border-bottom: 1px solid var(--theme-theme-stroke);
+        padding: 12px 24px;
+    }
+
+    &_detailsHead {
+        cursor: pointer;
+        &___borderTop {
+            border-top: 1px solid var(--theme-theme-stroke);
+        }
+    }
+
+    &_headBox {
+        padding: 12px 24px;
+    }
+
+    &_contacts {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+        margin-bottom: 8px;
+        cursor: copy;
+    }
+}
