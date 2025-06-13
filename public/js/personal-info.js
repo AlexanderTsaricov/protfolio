@@ -1,8 +1,8 @@
-import { buttonEvent } from "./info-fuctions";
-import { setCloseEventToTabs } from "./info-fuctions";
+import { buttonEvent } from "./info-functions.js";
+import { setCloseEventToTabs } from "./info-functions.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const globalInfoNameBlock = "personal-info";
+    const globalInfoNameBlock = "personalInfoBlock";
 
     const educationButton = document.querySelector("#educationButton");
     const schoolButton = document.querySelector("#schoolButton");
