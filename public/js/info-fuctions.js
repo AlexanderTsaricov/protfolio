@@ -1,23 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const educationButton = document.querySelector("#educationButton");
-    const schoolButton = document.querySelector("#schoolButton");
-    const collegeButton = document.querySelector("#collegeButton");
-    const universityButton = document.querySelector("#universityButton");
-    const coursesButton = document.querySelector("#coursesButton");
+export function buttonEvent(contentName, button, state, globalInfoNameBlock) {
+    button.addEventListener("click", function () {
+        if (!state.contentTabsNames.includes(contentName)) {
+            fetchContent(state, contentName, function () {
+                updateContentBox(contentName, state);
+            });
+            button.className = `${globalInfoNameBlock}_summary__active`;
+            state.contentTabsNames.push(contentName);
+            updateTabs(state);
 
-    const interestsButton = document.querySelector("#interestsButton");
-    const gamesButton = document.querySelector("#gamesButton");
+            setActiveTabs(contentName, state);
+        }
+    });
+}
 
-    const state = {
-        activeContentName: "",
-        contentTabs: document.querySelector("#contentTabs"),
-        contentTabsNames: [],
-        contentObject: {
-            null: "",
-        },
-        contentBox: document.querySelector("#contentBox"),
-    };
-
+export function setCloseEventToTabs(state, globalInfoNameBlock) {
     state.contentTabs.addEventListener("click", function (event) {
         const id = event.target.id.split("_");
         if (id[0] == "tab") {
@@ -38,36 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 state.activeContentName = "";
             }
             const button = document.querySelector(`#${id[1]}Button`);
-            button.className = "personalInfoBlock_summary";
-        }
-    });
-
-    buttonEvent("education", educationButton, state);
-    buttonEvent("school", schoolButton, state);
-    buttonEvent("college", collegeButton, state);
-    buttonEvent("university", universityButton, state);
-    buttonEvent("courses", coursesButton, state);
-
-    buttonEvent("interests", interestsButton, state);
-    buttonEvent("games", gamesButton, state);
-});
-
-function buttonEvent(contentName, button, state) {
-    button.addEventListener("click", function () {
-        if (!state.contentTabsNames.includes(contentName)) {
-            fetchContent(state, contentName, function () {
-                updateContentBox(contentName, state);
-            });
-            button.className = "personalInfoBlock_summary__active";
-            state.contentTabsNames.push(contentName);
-            updateTabs(state);
-
-            setActiveTabs(contentName, state);
+            button.className = `${globalInfoNameBlock}_summary`;
         }
     });
 }
 
-function setActiveTabs(newActiveContentName, state) {
+export function setActiveTabs(newActiveContentName, state) {
     if (
         state.activeContentName != newActiveContentName &&
         state.contentTabsNames.includes(newActiveContentName)
@@ -86,11 +58,11 @@ function setActiveTabs(newActiveContentName, state) {
     }
 }
 
-function setActiveContent(newActiveContentName, state) {
+export function setActiveContent(newActiveContentName, state) {
     state.contentBox.innerHTML = state.contentObject[newActiveContentName];
 }
 
-function fetchContent(state, contentName, callbackUpdate) {
+export function fetchContent(state, contentName, callbackUpdate) {
     if (!state.contentObject.hasOwnProperty(contentName)) {
         fetch(`/getContent/${contentName}`)
             .then((res) => res.text())
@@ -105,7 +77,7 @@ function fetchContent(state, contentName, callbackUpdate) {
     }
 }
 
-function updateTabs(state) {
+export function updateTabs(state) {
     let htmlText = "";
     state.contentTabsNames.forEach((tab) => {
         htmlText += `
@@ -124,7 +96,7 @@ function updateTabs(state) {
     state.contentTabs.innerHTML = htmlText;
 }
 
-function updateContentBox(activeContent, state) {
+export function updateContentBox(activeContent, state) {
     if (state.contentObject.hasOwnProperty(activeContent)) {
         state.contentBox.innerHTML = state.contentObject[activeContent];
     }
