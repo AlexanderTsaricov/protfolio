@@ -14,3 +14,6 @@ Route::get('/getContent/codes', [ContentController::class, 'codeSnippets']);
 Route::patch('/content/code-snippet/{id}', [ContentController::class, 'updateStars']);
 
 Route::get('/projects', [PageController::class, 'projects']);
+
+Route::get('/getProjectsData/projects', [ContentController::class, 'getProjects']);
+Route::get('/getProjectsData/languages', [ContentController::class, 'getLanguages']);

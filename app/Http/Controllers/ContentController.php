@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CodeSnippet;
+use App\Models\Language;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -140,5 +142,17 @@ class ContentController extends Controller
         $snippet = CodeSnippet::findOrFail($id);
         $snippet->increment('stars');
         return response()->json(['stars' => $snippet->stars], 200);
+    }
+
+    public function getProjects()
+    {
+        $projects = Project::all();
+        return response()->json($projects);
+    }
+
+    public function getLanguages()
+    {
+        $languages = Language::all();
+        return response()->json($languages);
     }
 }

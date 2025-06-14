@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CodeSnippet;
+use App\Models\Language;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -20,6 +22,6 @@ class PageController extends Controller
 
     public function projects()
     {
-        return view('projects');
+        return view('projects', ['projects' => Project::all(), 'languages' => Language::all()]);
     }
 }

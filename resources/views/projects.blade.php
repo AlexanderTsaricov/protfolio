@@ -14,15 +14,21 @@
         <div class="leftMenuBox">
             <details class="leftMenuBox_details">
                 <summary class="leftMenuBox_summary">projects</summary>
-                <div class="projectsSelectBox"></div>
+                <div class="projectsSelectBox">
+                    @foreach ($languages as $language)
+                        <label class="projectsSelectBox_label">
+                            <input type="checkbox" />
+                            <span class="projectsSelectBox_span">{{ $language->name }}</span>
+                        </label>
+                    @endforeach
+                </div>
             </details>
         </div>
         <div class="contentBox">
-            <div class="tabsBox"></div>
-            <div class="projectsBox"></div>
         </div>
     </main>
     @include('components.footer')
+    <script src="{{ asset('js/projects.js') }}"></script>
 </body>
 
 </html>

@@ -37,3 +37,123 @@ body {
         cursor: pointer;
     }
 }
+
+.contentBox {
+    padding: 64px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.projectBox {
+    display: flex;
+    flex-direction: column;
+    &_name {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--primitive-indigo-500);
+    }
+
+    &_image {
+        max-width: 407px;
+        border: 1px solid var(--primitive-slate-800);
+        border-radius: 16px 16px 0 0;
+    }
+
+    &_descriptionBox {
+        border-bottom: 1px solid var(--primitive-slate-800);
+        border-left: 1px solid var(--primitive-slate-800);
+        border-right: 1px solid var(--primitive-slate-800);
+        border-radius: 0 0 16px 16px;
+        padding: 32px;
+        background: var(--primitive-slate-950);
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+    }
+
+    &_description {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+    }
+    &_link {
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 10px 12px;
+        background: var(--primitive-slate-600);
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        color: var(--theme-heading-foreground);
+        max-width: 125px;
+    }
+}
+
+.projectsSelectBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 24px;
+
+    &_label {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--primitive-slate-500);
+            border-radius: 2px;
+            padding: 4px;
+            background-color: transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:checked {
+                background-color: var(--primitive-slate-500);
+            }
+
+            &::after {
+                content: "";
+                width: 12px;
+                height: 12px;
+                background-image: url("data:image/svg+xml;utf8,<svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 7.586L9.596 2.9895L10.3035 3.6965L5 9L1.818 5.818L2.525 5.111L5 7.586Z' fill='%23F8FAFC' /></svg>");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+
+            &:checked::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_span {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--primitive-grey-50);
+    }
+}
