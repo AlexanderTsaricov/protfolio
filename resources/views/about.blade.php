@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/about/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/personal-info/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/head-menu/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/footer/style.css') }}">
 </head>
 
 <body>
@@ -18,8 +16,7 @@
     <main class="main">
         <div class="leftMenu">
             <a href="/about/professional-info" class="leftMenu_button" id="professional-info">
-                <svg width="21" height="19" viewBox="0 0 21 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.5 0.5H19.5C19.7652 0.5 20.0196 0.605357 20.2071 0.792893C20.3946 0.98043 20.5 1.23478 20.5
                         1.5V17.5C20.5 17.7652 20.3946 18.0196 20.2071 18.2071C20.0196 18.3946 19.7652 18.5 19.5 18.5H1.5C1.23478
                         18.5 0.98043 18.3946 0.792893 18.2071C0.605357 18.0196 0.5 17.7652 0.5 17.5V1.5C0.5 1.23478 0.605357 0.98043
@@ -29,8 +26,7 @@
                 </svg>
             </a>
             <a href="/about/personal-info" class="leftMenu_button" id="personal-info">
-                <svg width="21" height="19" viewBox="0 0 17 21" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg width="21" height="19" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.5 18.5H15.5V20.5H1.5V18.5ZM8.5 16.5C6.37827 16.5 4.34344 15.6571 2.84315 14.1569C1.34285
                         12.6566 0.5 10.6217 0.5 8.5C0.5 6.37827 1.34285 4.34344 2.84315 2.84315C4.34344 1.34285 6.37827
                         0.5 8.5 0.5C10.6217 0.5 12.6566 1.34285 14.1569 2.84315C15.6571 4.34344 16.5 6.37827 16.5 8.5C16.5

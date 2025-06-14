@@ -17,4 +17,9 @@ class PageController extends Controller
         $codes = CodeSnippet::all();
         return view('about', ['selectedMenu' => $selectedMenu, 'codes' => $codes]);
     }
+
+    public function projects()
+    {
+        return view('projects');
+    }
 }

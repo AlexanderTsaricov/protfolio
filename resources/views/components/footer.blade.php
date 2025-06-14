@@ -1,7 +1,11 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/footer/style.css') }}">
+</head>
 <footer class="footerBox">
     <div class="footerBox_leftBox">
         <p class="footerBox_text">find me in:</p>
-        <a class="footerBox_link footerBox__borderLeft" href="https://www.linkedin.com/in/alexander-vinokurov-a3088a2bb/">
+        <a class="footerBox_link footerBox__borderLeft"
+            href="https://www.linkedin.com/in/alexander-vinokurov-a3088a2bb/">
             <svg class="footerBox_svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path

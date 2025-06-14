@@ -11,7 +11,12 @@
 <body>
     @include('components.head-menu')
     <main class="main">
-        <div class="leftMenuBox"></div>
+        <div class="leftMenuBox">
+            <details class="leftMenuBox_details">
+                <summary class="leftMenuBox_summary">projects</summary>
+                <div class="projectsSelectBox"></div>
+            </details>
+        </div>
         <div class="contentBox">
             <div class="tabsBox"></div>
             <div class="projectsBox"></div>
