@@ -12,6 +12,8 @@
             onclick="window.location.href='{{ url('/projects') }}'">_projects</button>
     </div>
     <div class="headMenuBox_contactBox">
-        <button class="headMenuBox_button headMenuBox_button__last">_contact_me</button>
+        <button
+            class="headMenuBox_button headMenuBox_button__last @if (request()->segment(1) == 'contact-me') headMenuBox_button__active @endif"
+            onclick="window.location.href='{{ url('/contact-me') }}'">_contact_me</button>
     </div>
 </menu>

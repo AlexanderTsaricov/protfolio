@@ -17,3 +17,5 @@ Route::get('/projects', [PageController::class, 'projects']);
 
 Route::get('/getProjectsData/projects', [ContentController::class, 'getProjects']);
 Route::get('/getProjectsData/languages', [ContentController::class, 'getLanguages']);
+
+Route::get('/contact-me', [PageController::class, 'contactMe']);
