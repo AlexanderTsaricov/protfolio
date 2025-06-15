@@ -1,17 +1,22 @@
 document.addEventListener("DOMContentLoaded", async function () {
+    const contentBox = document.querySelector(".contentBox");
+    const languageBox = document.querySelector(".projectsSelectBox");
+
     const [projects, languages] = await Promise.all([
         getData("projects"),
         getData("languages"),
     ]);
 
-    const projectsHTML = [];
-
     projects.forEach((project) => {
-        projectsHTML.push(getHTMLprojectBox(project));
+        project.html = "";
+        project.html = getHTMLprojectBox(project);
     });
 
-    const contentBox = document.querySelector(".contentBox");
-    contentBox.innerHTML = projectsHTML[0];
+    languages.forEach((language) => {
+        languageBox.innerHTML += getHTMLanguageBox(language);
+    });
+
+    contentBox.innerHTML = projects[0].html;
 });
 
 async function getData(resourse) {
@@ -34,4 +39,11 @@ function getHTMLprojectBox(project) {
     `;
 }
 
-function getHTMLanguageBox(language) {}
+function getHTMLanguageBox(language) {
+    return `
+        <label class="projectsSelectBox_label">
+            <input type="checkbox" />
+            <span class="projectsSelectBox_span">${language.name}</span>
+        </label>
+    `;
+}

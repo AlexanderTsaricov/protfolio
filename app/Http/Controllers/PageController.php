@@ -22,6 +22,6 @@ class PageController extends Controller
 
     public function projects()
     {
-        return view('projects', ['projects' => Project::all(), 'languages' => Language::all()]);
+        return view('projects');
     }
 }
