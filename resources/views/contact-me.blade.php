@@ -16,7 +16,8 @@
             <details class="findMeBox">
                 <summary class="findMeBox_summary">find-me-also-in</summary>
                 <div class="findMeBox_box">
-                    <a href="#" class="findMeBox_link">
+                    <a href="https://www.instagram.com/night_comfort93?igsh=MTUzNWE2bmtjeW9keA==" class="findMeBox_link"
+                        target="_blank" rel="noopener noreferrer">
                         <svg class="findMeBox_link__svg" width="12" height="13" viewBox="0 0 12 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -24,11 +25,43 @@
                         </svg>
                         <span class="findMeBox_link__text">Instagram</span>
                     </a>
+                    <a href="https://t.me/salispiligrim" class="findMeBox_link" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="findMeBox_link__svg" width="12" height="13" viewBox="0 0 12 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.66667 2.5V3.83333H1.33333V11.1667H8.66667V7.83333H10V11.8333C10 12.0101 9.92976 12.1797 9.80474 12.3047C9.67971 12.4298 9.51014 12.5 9.33333 12.5H0.666667C0.489856 12.5 0.320286 12.4298 0.195262 12.3047C0.0702379 12.1797 0 12.0101 0 11.8333V3.16667C0 2.98986 0.0702379 2.82029 0.195262 2.69526C0.320286 2.57024 0.489856 2.5 0.666667 2.5H4.66667ZM12 0.5V5.83333H10.6667V2.77533L5.47133 7.97133L4.52867 7.02867L9.72333 1.83333H6.66667V0.5H12Z" />
+                        </svg>
+                        <span class="findMeBox_link__text">Telegram</span>
+                    </a>
                 </div>
             </details>
 
         </div>
         <div class="content">
+            <div class="content_emptyBlock"></div>
+            <div class="content_contentBlock">
+                <div class="formBox">
+                    <form class="form" action="" method="post">
+                        @csrf
+                        <div class="inputBox">
+                            <label for="name" class="inputBox_text">_name:</label>
+                            <input class="inputBox_input" type="text" name="name">
+                        </div>
+                        <div class="inputBox">
+                            <label for="" class="inputBox_text">_email:</label>
+                            <input class="inputBox_input" type="email" name="email">
+                        </div>
+                        <div class="inputBox">
+                            <label for="" class="inputBox_text">_message:</label>
+                            <textarea class="inputBox_inputMessage" name="message" rows="6" wrap="soft"></textarea>
+                        </div>
+                        <input class="form_submit" type="submit" value="submit-message">
+                    </form>
+                </div>
+
+                <div class="codeBlock"></div>
+            </div>
 
         </div>
     </main>

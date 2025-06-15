@@ -30,6 +30,7 @@ body {
 
 .findMeBox_box {
   padding: 16px 24px;
+  gap: 8px;
 }
 .findMeBox_summary {
   font-family: var(--font-family);
@@ -62,4 +63,82 @@ body {
 }
 .findMeBox_link:hover .findMeBox_link__text {
   color: var(--theme-heading-foreground);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.content_emptyBlock {
+  height: 48px;
+  border-bottom: 1px solid var(--theme-theme-stroke);
+}
+.content_contentBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.formBox {
+  display: flex;
+  padding: 130px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+.form_submit {
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--primitive-slate-700);
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--primitive-slate-500);
+  max-width: 142px;
+  text-align: center;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.inputBox_text {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+}
+.inputBox_input {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  border: 1px solid var(--primitive-slate-300);
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 360px;
+  background: var(--theme-theme-backdrop);
+}
+.inputBox_inputMessage {
+  font-family: var(--font-family);
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--theme-foreground);
+  border: 1px solid var(--theme-theme-stroke);
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 372px;
+  min-height: 108px;
+  background: var(--theme-theme-backdrop);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }/*# sourceMappingURL=style.css.map */
