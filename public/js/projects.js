@@ -16,7 +16,20 @@ document.addEventListener("DOMContentLoaded", async function () {
         languageBox.innerHTML += getHTMLanguageBox(language);
     });
 
-    contentBox.innerHTML = projects[0].html;
+    languageBox.addEventListener("click", function (event) {
+        if (
+            event.target.classList.contains("projectsSelectBox_label") ||
+            event.target.type === "checkbox"
+        ) {
+            const languageButtons =
+                document.querySelectorAll(".checkboxLanguage");
+            const selected = getSelectedProjects(projects, languageButtons);
+            addContent(contentBox, selected);
+        }
+    });
+
+    const selectedProjects = getSelectedProjects(projects, languages);
+    addContent(contentBox, selectedProjects);
 });
 
 async function getData(resourse) {
@@ -42,8 +55,34 @@ function getHTMLprojectBox(project) {
 function getHTMLanguageBox(language) {
     return `
         <label class="projectsSelectBox_label">
-            <input type="checkbox" />
+            <input 
+              class="checkboxLanguage" 
+              type="checkbox" 
+              name="language[]" 
+              value="${language.id}" 
+            />
             <span class="projectsSelectBox_span">${language.name}</span>
         </label>
     `;
+}
+
+function getSelectedProjects(projects, languagesBtn) {
+    const ids = Array.from(languagesBtn)
+        .filter((languageBtn) => languageBtn.checked)
+        .map((languageBtn) => languageBtn.value);
+    if (ids.length == 0) {
+        return projects;
+    } else {
+        const selectedProjects = projects.filter((project) => {
+            return ids.every((id) => project.languages.includes(id));
+        });
+        return selectedProjects;
+    }
+}
+
+function addContent(box, projects) {
+    box.innerHTML = "";
+    projects.forEach((project) => {
+        box.innerHTML += project.html;
+    });
 }
