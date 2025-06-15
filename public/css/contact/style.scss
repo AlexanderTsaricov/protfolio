@@ -1,0 +1,39 @@
+@import url("../general/general.css");
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: var(--theme-theme-background);
+    background-image: url(../../image/backgroundBlure.png);
+    background-repeat: no-repeat;
+    background-size: 1067px;
+    background-position-x: right;
+    background-position-y: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    height: 100%;
+}
+
+.leftMenuBox {
+    height: 100%;
+    border-right: 1px solid var(--theme-theme-stroke);
+    min-width: 311px;
+    &_summary {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--primitive-slate-50);
+        border-bottom: 1px solid var(--theme-theme-stroke);
+        padding: 12px 24px;
+        cursor: pointer;
+    }
+}
