@@ -46,16 +46,16 @@
                         @csrf
                         <div class="inputBox">
                             <label for="name" class="inputBox_text">_name:</label>
-                            <input class="inputBox_input" type="text" name="name" id="nameInput">
+                            <input class="inputBox_input" type="text" name="name" id="nameInput" required>
                         </div>
                         <div class="inputBox">
                             <label for="" class="inputBox_text">_email:</label>
-                            <input class="inputBox_input" type="email" name="email" id="emailInput">
+                            <input class="inputBox_input" type="email" name="email" id="emailInput" required>
                         </div>
                         <div class="inputBox">
                             <label for="" class="inputBox_text">_message:</label>
                             <textarea class="inputBox_inputMessage" name="message" rows="6" wrap="soft"
-                                id="messageInput"></textarea>
+                                id="messageInput" required></textarea>
                         </div>
                         <input class="form_submit" type="submit" value="submit-message">
                     </form>
