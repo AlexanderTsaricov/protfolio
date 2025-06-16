@@ -19,12 +19,12 @@
             <p class="hello_smallGreatings">Hi all, I am</p>
             <h1 class="hello_name">Alexander Vinokurov</h1>
             <h2 class="hello_profession hello__marginBottom">> Full Stack Developer</h2>
-            <p class="hello_smallText">// complete the game to continue</p>
             <p class="hello_smallText">// find my profile on Github:</p>
             <p class="hello_linkGit">
                 const <span class="hello_linkGit__spanName">githubLink</span>
                 <span class="hello_link__exactly"> = </span>
-                <a href="https://github.com/AlexanderTsaricov" class="hello_linkGit__link">"https://github.com/AlexanderTsaricov"</a>
+                <a href="https://github.com/AlexanderTsaricov"
+                    class="hello_linkGit__link">"https://github.com/AlexanderTsaricov"</a>
             </p>
         </div>
         <div class="codeBox">
