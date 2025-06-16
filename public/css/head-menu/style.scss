@@ -93,6 +93,8 @@ button {
             position: absolute;
             top: 49px;
             width: 100%;
+            z-index: 1;
+            background-color: var(--theme-theme-background);
         }
         &_button {
             border-bottom: 1px solid var(--theme-theme-stroke);
