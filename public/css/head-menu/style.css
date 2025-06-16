@@ -23,9 +23,19 @@ button {
 
 .headMenuBox {
   display: flex;
-  justify-content: space-between;
   background-color: transparent;
   border-bottom: 1px solid var(--theme-theme-stroke);
+}
+.headMenuBox_leftButtonBox {
+  display: flex;
+}
+.headMenuBox_buttons {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 .headMenuBox_button {
   padding: 16px 32px;
@@ -42,4 +52,55 @@ button {
 .headMenuBox_button__last {
   border-left: 1px solid var(--theme-theme-stroke);
   border-right: none;
+}
+.headMenuBox_svg {
+  display: none;
+}
+
+@media (max-width: 870px) {
+  #myname {
+    display: none;
+  }
+}
+@media (max-width: 614px) {
+  #myname {
+    display: block;
+    border-bottom: none;
+    width: 100%;
+  }
+  .content {
+    max-width: 100%;
+    position: relative;
+  }
+  .headMenuBox {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  .headMenuBox_leftTabs {
+    flex-direction: column;
+  }
+  .headMenuBox_buttons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 49px;
+    width: 100%;
+  }
+  .headMenuBox_button {
+    border-bottom: 1px solid var(--theme-theme-stroke);
+    padding: 12px 24px;
+    width: 100%;
+    border-right: none;
+  }
+  .headMenuBox_leftButtonBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .headMenuBox_svg {
+    display: block;
+    padding: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */

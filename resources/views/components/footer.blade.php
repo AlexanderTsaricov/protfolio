@@ -22,7 +22,7 @@
     </div>
     <div class="footerBox_rightBox">
         <a class="footerBox_link footerBox__borderLeft" href="https://github.com/AlexanderTsaricov">
-            @AlexanderTsaricov
+            <span id="gitHubLinkText">@AlexanderTsaricov</span>
             <svg class="footerBox_svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848
@@ -41,3 +41,5 @@
         </a>
     </div>
 </footer>
+
+<script src="{{ asset('js/footer.js') }}"></script>

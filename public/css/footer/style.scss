@@ -37,3 +37,16 @@
         max-width: 24px;
     }
 }
+
+@media (max-width: 614px) {
+    .footerBox {
+        justify-content: flex-start;
+        &_text {
+            font-family: var(--font-family);
+            font-weight: 450;
+            font-size: 16px;
+            line-height: 150%;
+            color: var(--theme-foreground);
+        }
+    }
+}

@@ -1,4 +1,5 @@
 @import url("../general/general.css");
+
 body {
 	background: var(--theme-theme-background);
 	background-image: url(../../image/backgroundBlure.png);
@@ -65,18 +66,78 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
+	height: calc(100vh - 117px);
 }
 
 .code {
 	max-width: 540px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1235px) {
 	.content {
 		flex-direction: column;
-		height: 100vh;
+		overflow: hidden;
+		height: calc(100vh - 117px);
 	}
 	.code {
 		display: none;
+	}
+
+	.hello {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 684px) {
+	.hello {
+		&_smallGreatings {
+			font-family: var(--font-family);
+			font-weight: 450;
+			font-size: 18px;
+			line-height: 150%;
+			color: var(--theme-foreground);
+		}
+		&_name {
+			font-family: var(--font-family);
+			font-weight: 450;
+			font-size: 48px;
+			line-height: 120%;
+			color: var(--theme-heading-foreground);
+		}
+		&_profession {
+			font-family: var(--font-family);
+			font-weight: 450;
+			font-size: 20px;
+			line-height: 150%;
+			color: var(--primitive-indigo-500);
+		}
+		&_smallText {
+			font-family: var(--font-family);
+			font-weight: 450;
+			font-size: 14px;
+			line-height: 140%;
+			color: var(--theme-foreground);
+		}
+
+		&_linkGit {
+			font-family: var(--font-family);
+			font-weight: 450;
+			font-size: 14px;
+			line-height: 140%;
+			color: var(--primitive-indigo-500);
+		}
+	}
+}
+@media (max-width: 614px) {
+	.content {
+		overflow: hidden;
+		height: calc(100vh - 108px);
+	}
+}
+
+@media (max-width: 549px) {
+	.hello {
+		margin: 24px;
 	}
 }

@@ -25,9 +25,20 @@ button {
 }
 .headMenuBox {
     display: flex;
-    justify-content: space-between;
     background-color: transparent;
     border-bottom: 1px solid var(--theme-theme-stroke);
+
+    &_leftButtonBox {
+        display: flex;
+    }
+    &_buttons {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        justify-content: space-between;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
 
     &_button {
         padding: 16px 32px;
@@ -44,5 +55,58 @@ button {
     &_button__last {
         border-left: 1px solid var(--theme-theme-stroke);
         border-right: none;
+    }
+
+    &_svg {
+        display: none;
+    }
+}
+
+@media (max-width: 870px) {
+    #myname {
+        display: none;
+    }
+}
+
+@media (max-width: 614px) {
+    #myname {
+        display: block;
+        border-bottom: none;
+        width: 100%;
+    }
+    .content {
+        max-width: 100%;
+        position: relative;
+    }
+    .headMenuBox {
+        display: flex;
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        align-items: center;
+        &_leftTabs {
+            flex-direction: column;
+        }
+        &_buttons {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 49px;
+            width: 100%;
+        }
+        &_button {
+            border-bottom: 1px solid var(--theme-theme-stroke);
+            padding: 12px 24px;
+            width: 100%;
+            border-right: none;
+        }
+        &_leftButtonBox {
+            display: flex;
+            flex-direction: column;
+        }
+        &_svg {
+            display: block;
+            padding: 16px;
+        }
     }
 }
