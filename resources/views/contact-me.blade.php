@@ -42,30 +42,75 @@
             <div class="content_emptyBlock"></div>
             <div class="content_contentBlock">
                 <div class="formBox">
-                    <form class="form" action="" method="post">
+                    <form class="form" action="{{ route('contact.send') }}" method="post">
                         @csrf
                         <div class="inputBox">
                             <label for="name" class="inputBox_text">_name:</label>
-                            <input class="inputBox_input" type="text" name="name">
+                            <input class="inputBox_input" type="text" name="name" id="nameInput">
                         </div>
                         <div class="inputBox">
                             <label for="" class="inputBox_text">_email:</label>
-                            <input class="inputBox_input" type="email" name="email">
+                            <input class="inputBox_input" type="email" name="email" id="emailInput">
                         </div>
                         <div class="inputBox">
                             <label for="" class="inputBox_text">_message:</label>
-                            <textarea class="inputBox_inputMessage" name="message" rows="6" wrap="soft"></textarea>
+                            <textarea class="inputBox_inputMessage" name="message" rows="6" wrap="soft"
+                                id="messageInput"></textarea>
                         </div>
                         <input class="form_submit" type="submit" value="submit-message">
                     </form>
                 </div>
 
-                <div class="codeBlock"></div>
+                <div class="codeBlock">
+                    <ol class="code">
+                        <li class="code_line">
+                            <span class="code_violet">const</span>
+                            <span class="code_blue">button</span>
+                            <span class="code_violet">=</span>
+                            <span class="code_blue">document</span>.<span class="code_blue">querySelector</span>(<span
+                                class="code_orange">'#sendBtn'</span>);
+                        </li>
+                        <li class="code_line"></li>
+                        <li class="code_line">
+                            <span class="code_violet">const</span>
+                            <span class="code_blue">message</span>
+                            <span class="code_violet">=</span> {
+                        </li>
+                        <li class="code_line">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">name: </span><span
+                                class="code_orange" id="name">""</span>,
+                        </li>
+                        <li class="code_line">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">email: </span><span
+                                class="code_orange" id="email">""</span>,
+                        </li>
+                        <li class="code_line" id="messageLi">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">message: </span><span
+                                class="code_orange" id="message">""</span>,
+                        </li>
+                        <li class="code_line">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">date: </span><span
+                                class="code_orange">"{{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}"</span>,
+                        </li>
+                        <li class="code_line">}</li>
+                        <li class="code_line"></li>
+                        <li class="code_line">
+                            <span class="code_blue">button</span>.<span class="code_blue">addEventListener</span>(<span
+                                class="code_orange">'click'</span>, () <span class="code_violet">=></span> {
+                        </li>
+                        <li class="code_line">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">form</span>.<span
+                                class="code_blue">send</span>(<span class="code_blue">message</span>);
+                        </li>
+                        <li class="code_line">})</li>
+                    </ol>
+                </div>
             </div>
 
         </div>
     </main>
     @include('components.footer')
+    <script src="{{ asset('js/contact-me.js') }}"></script>
 </body>
 
 </html>

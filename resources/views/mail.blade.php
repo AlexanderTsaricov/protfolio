@@ -10,7 +10,7 @@
 <body>
     <h2>New message from protfolio site</h2>
     <div>
-        <p>From: {{$data['mail']}}</p>
+        <p>From: {{$data['email']}}</p>
         <p>Date: {{now()->toDateString()}}</p>
         <p>Name: {{$data['name']}}</p>
         <p>Message: {{$data['message']}}</p>
