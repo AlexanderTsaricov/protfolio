@@ -11,7 +11,8 @@ class ContentController extends Controller
 {
     public function getContentView($selectedContentName)
     {
-        return view('components.education', ['text' => $this->getContentText($selectedContentName)]);
+        $small = request()->boolean('small', false);
+        return view('components.education', ['text' => $this->getContentText($selectedContentName), 'small' => $small]);
     }
 
     /**
@@ -128,7 +129,7 @@ class ContentController extends Controller
             'visualBasic' => "Explored out of curiosity about older technologies. I studied the development interface and basic procedural logic syntax."
         ];
 
-        return $this->separateTextToArray($content[$selectedContentName], 40);
+        return $this->separateTextToArray($content[$selectedContentName], 29);
     }
 
     public function codeSnippets()

@@ -6,7 +6,7 @@
   line-height: 150%;
   color: var(--primitive-slate-50);
   border-bottom: 1px solid var(--theme-theme-stroke);
-  padding: 12px 24px;
+  padding: 12px 12px;
 }
 .contactsBlock_detailsHead {
   cursor: pointer;
@@ -15,7 +15,7 @@
   border-top: 1px solid var(--theme-theme-stroke);
 }
 .contactsBlock_headBox {
-  padding: 12px 24px;
+  padding: 12px;
 }
 .contactsBlock_contacts {
   font-family: var(--font-family);
@@ -25,4 +25,13 @@
   color: var(--theme-foreground);
   margin-bottom: 8px;
   cursor: copy;
+}
+
+@media (max-width: 835px) {
+  .contactsBlock_summaryHead {
+    background-color: var(--primitive-slate-700);
+  }
+  .contactsBlock_detailsHead {
+    margin-top: 4px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -15,10 +15,10 @@
         line-height: 150%;
         color: var(--primitive-slate-50);
         border-bottom: 1px solid var(--theme-theme-stroke);
-        padding: 12px 24px;
+        padding: 12px 12px;
     }
     &_headBox {
-        padding: 12px 24px;
+        padding: 12px 12px;
     }
     &_summary {
         font-family: var(--font-family);
@@ -64,7 +64,7 @@
 .tabBox {
     border-left: 1px solid var(--theme-theme-stroke);
     max-width: 242px;
-    padding: 12px 24px;
+    padding: 12px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,4 +101,12 @@
 
 #svgIntrests {
     fill: var(--primitive-teal-400);
+}
+
+@media (max-width: 835px) {
+    .personalInfoBlock {
+        &_summaryHead {
+            background-color: var(--primitive-slate-700);
+        }
+    }
 }

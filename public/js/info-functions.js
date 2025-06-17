@@ -63,8 +63,9 @@ export function setActiveContent(newActiveContentName, state) {
 }
 
 export function fetchContent(state, contentName, callbackUpdate) {
+    const isSmall = window.matchMedia("(max-width: 565px)").matches;
     if (!state.contentObject.hasOwnProperty(contentName)) {
-        fetch(`/getContent/${contentName}`)
+        fetch(`/getContent/${contentName}?small=${isSmall}`)
             .then((res) => res.text())
             .then((html) => {
                 state.contentObject[contentName] = html;

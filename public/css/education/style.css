@@ -17,7 +17,22 @@
   content: counter(edu) ".";
   min-width: 40px;
   text-align: right;
-  margin-right: 40px;
+  margin-right: 10px;
   display: inline-block;
   color: var(--theme-foreground);
+}
+
+@media (max-width: 565px) {
+  .educationBox_li {
+    font-family: var(--font-family);
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--theme-foreground);
+  }
+  .educationBox_li::before {
+    content: none;
+    counter-increment: none;
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

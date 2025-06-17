@@ -7,7 +7,6 @@ body {
 }
 body {
     background: var(--theme-theme-background);
-    background-image: url(../../image/backgroundBlure.png);
     background-repeat: no-repeat;
     background-size: 1067px;
     background-position-x: right;
@@ -15,12 +14,15 @@ body {
     display: flex;
     flex-direction: column;
 }
+.selectMenu {
+    min-width: 269px;
+}
 
 .leftMenu {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    padding: 12px 22px;
+    padding: 12px;
     max-width: max-content;
     border-right: 1px solid var(--theme-theme-stroke);
 }
@@ -105,6 +107,67 @@ body {
     }
 }
 
-.selectMenu {
-    min-width: 294px;
+@media (max-width: 1492px) {
+    .contentTab {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .selectedContentBox {
+        width: 100%;
+        grid-template-areas:
+            "tabs tabs"
+            "content content";
+        &_content {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        &_codeSnippetBox {
+            display: none;
+        }
+
+        &_tabs {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 885px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .leftMenu {
+        flex-direction: row;
+        max-width: none;
+        border-right: none;
+        border-bottom: 1px solid var(--theme-theme-stroke);
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 835px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .leftMenu {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 565px) {
+    .selectedContentBox {
+        &_content {
+            padding: 8px 8px;
+        }
+    }
 }

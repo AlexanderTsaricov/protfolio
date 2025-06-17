@@ -75,7 +75,6 @@ button {
   .headMenuBox {
     display: flex;
     width: 100%;
-    overflow-x: hidden;
     box-sizing: border-box;
     align-items: center;
   }
@@ -93,6 +92,7 @@ button {
   }
   .headMenuBox_button {
     border-bottom: 1px solid var(--theme-theme-stroke);
+    box-sizing: border-box;
     padding: 12px 24px;
     width: 100%;
     border-right: none;
