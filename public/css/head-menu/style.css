@@ -104,5 +104,6 @@ button {
   .headMenuBox_svg {
     display: block;
     padding: 16px;
+    fill: var(--primitive-slate-500);
   }
 }/*# sourceMappingURL=style.css.map */
