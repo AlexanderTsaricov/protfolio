@@ -86,7 +86,6 @@ body {
 
 .formBox {
     display: flex;
-    padding: 130px;
     border-right: 1px solid var(--theme-theme-stroke);
 }
 
@@ -95,6 +94,8 @@ body {
     flex-direction: column;
     gap: 24px;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 
     &_submit {
         border-radius: 8px;
@@ -110,10 +111,20 @@ body {
     }
 }
 
+.active {
+    font-family: var(--font-family);
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--primary-inverted);
+    background: var(--primary-background);
+}
+
 .inputBox {
     display: flex;
     flex-direction: column;
     gap: 7px;
+    width: 372px;
     &_text {
         font-family: var(--font-family);
         font-weight: 450;
@@ -190,5 +201,46 @@ body {
 
     &_orange {
         color: var(--primitive-orange-300);
+    }
+}
+
+@media (max-width: 1207px) {
+    .inputBox {
+        width: 291px;
+    }
+}
+
+@media (max-width: 1125px) {
+    .content {
+        &_contentBlock {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+    .formBox {
+        padding: 24px;
+    }
+    .codeBlock {
+        display: none;
+    }
+}
+
+@media (max-width: 834px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .leftMenuBox {
+        min-width: 0;
+        height: auto;
+    }
+
+    .findMeBox {
+        padding-top: 4px;
+        &_summary {
+            background: var(--primitive-slate-700);
+        }
     }
 }

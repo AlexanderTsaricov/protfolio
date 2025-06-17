@@ -79,3 +79,23 @@ messageInput.addEventListener("input", function (event) {
         prevLi = li;
     }
 });
+
+const submitBtn = document.querySelector(".form_submit");
+
+function updateSubmitButtonStyle() {
+    const isNameFilled = nameInput.value.trim() !== "";
+    const isEmailFilled = emailInput.value.trim() !== "";
+    const isMessageFilled = messageInput.value.trim() !== "";
+
+    if (isNameFilled && isEmailFilled && isMessageFilled) {
+        submitBtn.classList.add("active");
+    } else {
+        submitBtn.classList.remove("active");
+    }
+}
+
+[nameInput, emailInput, messageInput].forEach((input) => {
+    input.addEventListener("input", updateSubmitButtonStyle);
+});
+
+window.addEventListener("DOMContentLoaded", updateSubmitButtonStyle);
