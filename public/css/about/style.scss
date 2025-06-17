@@ -115,15 +115,22 @@ body {
     }
     .selectedContentBox {
         width: 100%;
-        grid-template-areas:
-            "tabs tabs"
-            "content content";
+        display: flex;
+        flex-direction: column; /* элементы идут столбиком */
+        overflow-y: auto;
+        max-height: 100vh;
         &_content {
-            width: 100%;
+            overflow: visible !important;
+            max-width: 100% !important;
+            width: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            word-break: break-word !important;
             box-sizing: border-box;
-        }
-        &_codeSnippetBox {
-            display: none;
+            display: block !important;
+            flex: none !important;
         }
 
         &_tabs {
@@ -135,6 +142,12 @@ body {
             box-sizing: border-box;
             width: 100%;
         }
+    }
+
+    .codeBox_code {
+        overflow-x: auto;
+        white-space: pre;
+        max-width: 100%;
     }
 }
 
