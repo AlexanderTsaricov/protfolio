@@ -4,6 +4,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [PageController::class, 'hello']);
 //Route::get('/about', [PageController::class, 'about']);
@@ -23,3 +24,12 @@ Route::get('/contact-me', [PageController::class, 'contactMe']);
 
 
 Route::post('/sendMail', [MailController::class, 'sendMail'])->name('contact.send');
+
+
+Route::get('/test-auth', function () {
+    if (Auth::check()) {
+        return 'User is logged in: ' . Auth::user()->email;
+    } else {
+        return 'User is NOT logged in';
+    }
+});
