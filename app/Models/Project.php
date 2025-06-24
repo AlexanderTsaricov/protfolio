@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Project extends Model
 {
@@ -22,5 +23,16 @@ class Project extends Model
     public function languageModels()
     {
         return Language::whereIn('id', $this->languages ?? [])->get();
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(function (Project $project) {
+            Cache::forget('projects.all');
+        });
+
+        static::deleted(function (Project $project) {
+            Cache::forget('projects.all');
+        });
     }
 }

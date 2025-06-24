@@ -6,6 +6,7 @@ use App\Models\CodeSnippet;
 use App\Models\Language;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ContentController extends Controller
 {
@@ -147,7 +148,9 @@ class ContentController extends Controller
 
     public function getProjects()
     {
-        $projects = Project::all();
+        $projects = Cache::remember('projects.all', now()->addDay(), function () {
+            return Project::all();
+        });
         return response()->json($projects);
     }
 

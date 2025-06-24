@@ -84,11 +84,26 @@ body {
         grid-area: tabs;
         display: flex;
     }
-
     &_codeSnippetBox {
         grid-area: snippet;
         border-left: 1px solid var(--theme-theme-stroke);
         padding: 12px 40px;
+        max-height: 100%;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 6px;
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #62748e;
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #cad5e2;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
     }
 
     &_headerText {
@@ -104,6 +119,25 @@ body {
         display: flex;
         flex-direction: column;
         gap: 32px;
+    }
+}
+
+.selectedContentBox_codeSnippetBox {
+    max-height: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 6px;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #62748e;
+        border-radius: 8px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #cad5e2;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
     }
 }
 
