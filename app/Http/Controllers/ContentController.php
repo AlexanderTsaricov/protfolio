@@ -148,7 +148,7 @@ class ContentController extends Controller
 
     public function getProjects()
     {
-        $projects = Cache::remember('projects.all', now()->addDay(), function () {
+        $projects = Cache::remember('projects.all', now()->addWeek(2), function () {
             return Project::all();
         });
         return response()->json($projects);
