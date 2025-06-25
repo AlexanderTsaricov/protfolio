@@ -42,7 +42,7 @@ function getHTMLprojectBox(project) {
     return `
         <div class="projectBox">
             <p class="projectBox_name">${project.name}</p>
-            <img class="projectBox_image" src="http://alexvinportfolio.ru/storage/${project.image}" alt="Project image">
+            <img class="projectBox_image" src="${window.location.origin}/storage/${project.image}" alt="Project image">
             <div class="projectBox_descriptionBox">
                 <p class="projectBox_description">${project.description}</p>
                 <a class="projectBox_link" href="${project.link}" target="_blank"
