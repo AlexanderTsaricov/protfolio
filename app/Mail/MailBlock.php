@@ -3,9 +3,11 @@
 namespace App\Mail;
 
 use App\Models\BlokedMail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class MailBlock implements Blokerator
 {
+    use SoftDeletes;
     private $blockedMails = [];
 
     public function __construct()
