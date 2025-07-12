@@ -21,7 +21,8 @@ class MailBlock implements Blokerator
         if (in_array($mail, $this->blockedMails)) {
             return false;
         } else {
-            $newBlokedMail = new BlokedMail($mail);
+            $newBlokedMail = new BlokedMail();
+            $newBlokedMail->email = $mail;
             $newBlokedMail->save();
             $this->blockedMails[] = $newBlokedMail->email;
             return true;

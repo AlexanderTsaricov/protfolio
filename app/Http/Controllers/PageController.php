@@ -27,6 +27,6 @@ class PageController extends Controller
 
     public function contactMe()
     {
-        return view('contact-me');
+        return view('contact-me', ['blocked' => false]);
     }
 }

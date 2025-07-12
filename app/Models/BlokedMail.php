@@ -10,9 +10,8 @@ class BlokedMail extends Model
     public $email;
     public $date;
 
-    public function __construct($mail)
+    public function __construct(array $atributes = [])
     {
-        $this->email = $mail;
         $this->date = Date::now();
     }
 

@@ -15,9 +15,10 @@ class MailController extends Controller
     public function sendMail(Request $request)
     {
         Log::info('sendMail() вызван', $request->all());
-        $email = Purifier::clean($request->input('email'));
+        $email = Purifier::clean($request->input('email'), ['HTML.Allowed' => '']);
+        Log::info($email);
         if (BlokedMail::where('email', $email)->first()) {
-            return view('contact-me', ['bloked' => true]);
+            return view('contact-me', ['blocked' => true]);
         }
         $data = $request->validate([
             'name'    => 'required|string|max:255',

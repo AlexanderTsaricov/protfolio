@@ -204,6 +204,14 @@ body {
     }
 }
 
+.blocked-text {
+    font-family: var(--font-family);
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 150%;
+    color: #7e2a0c;
+}
+
 @media (max-width: 1207px) {
     .inputBox {
         width: 291px;
