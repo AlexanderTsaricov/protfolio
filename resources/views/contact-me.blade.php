@@ -42,6 +42,9 @@
             <div class="content_emptyBlock"></div>
             <div class="content_contentBlock">
                 <div class="formBox">
+                    @if ($bloked)
+                        <p>Sorry, but your email is blocked!</p>
+                    @endif
                     <form class="form" action="{{ route('contact.send') }}" method="post">
                         @csrf
                         <div class="inputBox">
