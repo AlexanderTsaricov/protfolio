@@ -7,13 +7,12 @@ use Illuminate\Support\Facades\Date;
 
 class BlokedMail extends Model
 {
-    public $email;
-    public $date;
+    protected $fillable = ['email'];
 
-    public function __construct(array $atributes = [])
+    protected static function booted()
     {
-        $this->date = Date::now();
+        static::creating(function ($model) {
+            $model->date = now();
+        });
     }
-
-    public $fillable = ['email'];
 }
