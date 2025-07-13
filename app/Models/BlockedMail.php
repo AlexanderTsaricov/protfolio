@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Date;
 
-class BlokedMail extends Model
+class BlockedMail extends Model implements BlockedEssence
 {
     protected $fillable = ['email'];
 
@@ -14,5 +13,10 @@ class BlokedMail extends Model
         static::creating(function ($model) {
             $model->date = now();
         });
+    }
+
+    public function getName()
+    {
+        return $this->email;
     }
 }

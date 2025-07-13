@@ -2,17 +2,15 @@
 
 namespace App\Mail;
 
-use App\Models\BlokedMail;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\BlockedMail;
 
 class MailBlock implements Blokerator
 {
-    use SoftDeletes;
     private $blockedMails = [];
 
     public function __construct()
     {
-        $blockedMailsModels = BlokedMail::all();
+        $blockedMailsModels = BlockedMail::all();
         foreach ($blockedMailsModels as $blokedMailModel) {
             $this->blockedMails[] = $blokedMailModel->email;
         }
@@ -23,7 +21,7 @@ class MailBlock implements Blokerator
         if (in_array($mail, $this->blockedMails)) {
             return false;
         } else {
-            $newBlokedMail = new BlokedMail();
+            $newBlokedMail = new BlockedMail();
             $newBlokedMail->email = $mail;
             $newBlokedMail->save();
             $this->blockedMails[] = $newBlokedMail->email;
@@ -37,7 +35,7 @@ class MailBlock implements Blokerator
         if (in_array($mail, $this->blockedMails)) {
             for ($i = 0; $i < count($this->blockedMails); $i++) {
                 if ($mail == $this->blockedMails[$i]) {
-                    BlokedMail::where('email', $mail)->delete();
+                    BlockedMail::where('email', $mail)->delete();
                     return true;
                 }
             }
