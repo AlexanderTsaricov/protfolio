@@ -4,6 +4,7 @@ namespace App\Reposotories\Blocked;
 
 use App\Models\BlockedEssence;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 interface BlockedEssenseRepositoryInterface
 {
@@ -37,4 +38,6 @@ interface BlockedEssenseRepositoryInterface
      * @param string $email
      */
     public function add(string $essenseName);
+
+    public function edit(Model $Model, string $email): Model;
 }

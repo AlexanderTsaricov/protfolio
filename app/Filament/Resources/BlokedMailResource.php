@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BlokedMailResource\Pages;
 use App\Filament\Resources\BlokedMailResource\RelationManagers;
-use App\Models\BlokedMail;
+use App\Models\BlockedMail;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BlokedMailResource extends Resource
 {
-    protected static ?string $model = BlokedMail::class;
+    protected static ?string $model = BlockedMail::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

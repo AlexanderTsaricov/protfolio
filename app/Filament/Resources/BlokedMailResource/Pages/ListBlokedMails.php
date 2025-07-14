@@ -13,7 +13,9 @@ class ListBlokedMails extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->label('Blocking Email')
+                ->icon('heroicon-o-plus'),
         ];
     }
 }

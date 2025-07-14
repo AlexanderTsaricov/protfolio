@@ -4,6 +4,7 @@ namespace App\Reposotories\Blocked;
 
 use App\Models\BlockedMail;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class BlockedMailRepository implements BlockedEssenseRepositoryInterface
 {
@@ -30,10 +31,18 @@ class BlockedMailRepository implements BlockedEssenseRepositoryInterface
         $blockedEmail->delete();
     }
 
-    public function add(string $email): void
+    public function add(string $email): BlockedMail
     {
         $newBlockedEmail = new BlockedMail();
         $newBlockedEmail->email = $email;
         $newBlockedEmail->save();
+        return $newBlockedEmail;
+    }
+
+    public function edit(Model $blockedMail, string $email): Model
+    {
+        $blockedMail->email = $email;
+        $blockedMail->save();
+        return $blockedMail;
     }
 }
