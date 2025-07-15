@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
-use App\Models\BlokedMail;
+use App\Reposotories\Blocked\BlockedMailRepository;
+use App\Services\BlockedMailService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Redirect;
 use Mews\Purifier\Facades\Purifier;
 
 class MailController extends Controller
 {
     public function sendMail(Request $request)
     {
-        Log::info('sendMail() вызван', $request->all());
+        $mailRepository = new BlockedMailRepository();
+        $blockedMailService = new BlockedMailService($mailRepository);
         $email = Purifier::clean($request->input('email'), ['HTML.Allowed' => '']);
-        Log::info($email);
-        if (BlokedMail::where('email', $email)->first()) {
+        if ($blockedMailService->isBlocked($email)) {
             return view('contact-me', ['blocked' => true]);
         }
         $data = $request->validate([
