@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\TextAboutMeResource\Pages;
+use App\Filament\Resources\TextAboutMeResource\RelationManagers;
+use App\Models\TextAboutMe;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+class TextAboutMeResource extends Resource
+{
+    protected static ?string $model = TextAboutMe::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                //
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('Name'),
+                TextColumn::make('Text')
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListTextAboutMes::route('/'),
+            'create' => Pages\CreateTextAboutMe::route('/create'),
+            'edit' => Pages\EditTextAboutMe::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery();
+    }
+}

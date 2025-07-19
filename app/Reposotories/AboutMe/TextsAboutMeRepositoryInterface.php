@@ -27,5 +27,7 @@ interface TextsAboutMeRepositoryInterface
      */
     public function edit(Model $textAboutMe, string $parameter, string $changeString): Model;
 
+    public function get(string $name): Model|null;
+
 }
 

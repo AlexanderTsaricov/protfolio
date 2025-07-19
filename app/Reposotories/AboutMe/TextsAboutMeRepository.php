@@ -47,4 +47,13 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
     {
         TextAboutMe::where('name', $name)->first()->remove();
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function get(string $name): Model|null 
+    {
+        $textAboutMe = TextAboutMe::where('name', $name)->first();
+        return $textAboutMe;
+    }
 }
