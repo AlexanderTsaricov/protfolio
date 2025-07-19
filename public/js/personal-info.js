@@ -1,4 +1,4 @@
-import { buttonEvent } from "./info-functions.js";
+import { addButtonEventsToAll, addDelegateEvent } from "./info-functions.js";
 import { setCloseEventToTabs } from "./info-functions.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         games: document.querySelector("#gamesButton"),
     };
 
-    setCloseEventToTabs(state, globalInfoNameBlock);
-
-    for (const key in buttons) {
-        if (buttons.hasOwnProperty(key)) {
-            buttonEvent(key, buttons[key], state, globalInfoNameBlock);
-        }
+    const buttonsObj = {};
+    for (const [key, button] of Object.entries(buttons)) {
+        buttonsObj[key] = { button: button, event: false };
     }
+
+    setCloseEventToTabs(state, globalInfoNameBlock, buttonsObj);
+    addDelegateEvent()
 });

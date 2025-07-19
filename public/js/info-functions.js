@@ -1,4 +1,12 @@
-export function buttonEvent(contentName, button, state, globalInfoNameBlock) {
+/* //TODO: необходимо делегировать обработчики наверх, чтобы не перенавешивать их.
+
+export function buttonEvent(
+    contentName,
+    button,
+    state,
+    globalInfoNameBlock,
+    buttons
+) {
     button.addEventListener("click", function () {
         if (!state.contentTabsNames.includes(contentName)) {
             fetchContent(state, contentName, function () {
@@ -6,14 +14,14 @@ export function buttonEvent(contentName, button, state, globalInfoNameBlock) {
             });
             button.className = `${globalInfoNameBlock}_summary__active`;
             state.contentTabsNames.push(contentName);
-            updateTabs(state);
+            updateTabs(state, globalInfoNameBlock, buttons);
 
             setActiveTabs(contentName, state);
         }
     });
 }
 
-export function setCloseEventToTabs(state, globalInfoNameBlock) {
+export function setCloseEventToTabs(state, globalInfoNameBlock, buttons) {
     state.contentTabs.addEventListener("click", function (event) {
         const id = event.target.id.split("_");
         if (id[0] == "tab") {
@@ -26,7 +34,7 @@ export function setCloseEventToTabs(state, globalInfoNameBlock) {
             if (index !== -1) {
                 state.contentTabsNames.splice(index, 1);
             }
-            updateTabs(state);
+            updateTabs(state, globalInfoNameBlock, buttons);
             if (state.activeContentName == id[1]) {
                 updateContentBox("null", state);
             }
@@ -78,7 +86,7 @@ export function fetchContent(state, contentName, callbackUpdate) {
     }
 }
 
-export function updateTabs(state) {
+export function updateTabs(state, globalInfoNameBlock, buttons) {
     let htmlText = "";
     state.contentTabsNames.forEach((tab) => {
         htmlText += `
@@ -94,6 +102,8 @@ export function updateTabs(state) {
             </div>
         `;
     });
+    setCloseEventToTabs(state, globalInfoNameBlock);
+    addButtonEventsToAll(state, globalInfoNameBlock, buttons);
     state.contentTabs.innerHTML = htmlText;
 }
 
@@ -101,4 +111,37 @@ export function updateContentBox(activeContent, state) {
     if (state.contentObject.hasOwnProperty(activeContent)) {
         state.contentBox.innerHTML = state.contentObject[activeContent];
     }
+}
+
+export function addButtonEventsToAll(state, globalInfoNameBlock, buttons) {
+    for (const key in buttons) {
+        if (buttons.hasOwnProperty(key) && !buttons[key]["event"]) {
+            buttonEvent(key, buttons[key]["button"], state, globalInfoNameBlock, buttons);
+            buttons[key]["event"] = true;
+        }
+    }
+}
+
+export function addDelegateEvent(contentName, buttonContainer, state, globalInfoNameBlock, buttons) {
+    buttonContainer.addEventListener("click", function (e) {
+        if (!state.contentTabsNames.includes(contentName) && e.target.classList.contains(tabBox_close)) {
+
+            const button = e.target.parentElement.parentElement;
+            fetchContent(state, contentName, function () {
+                updateContentBox(contentName, state);
+            });
+            button.className = `${globalInfoNameBlock}_summary__active`;
+            state.contentTabsNames.push(contentName);
+            updateTabs(state, globalInfoNameBlock, buttons);
+
+            setActiveTabs(contentName, state);
+        }
+    });
+}
+ */
+
+// TODO: Это все надо нахрен переделать
+
+function closeTab(tab) {
+
 }
