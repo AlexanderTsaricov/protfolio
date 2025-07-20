@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class TextAboutMe extends Model
 {
 
-    protected string $text;
-
-    protected string $name;
-
     protected $table = 'texts_about_me';
     protected $fillable = ['text', 'name'];
 
@@ -29,11 +25,5 @@ class TextAboutMe extends Model
     public function setName(string $name) {
         $this->name = $name;
     }
-
-    public function __construct(string $name = 'noname', string $text = '') {
-        $this->name = $name;
-        $this->text = $text;
-    }
-
 
 }

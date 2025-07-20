@@ -11,11 +11,19 @@ class TextAboutMeService implements TextAboutMeServiceInterface
 {
     private ?TextsAboutMeRepository $repository = null;
 
+    private function getRepository() {
+        if ($this->repository == null) {
+            $this->repository = new TextsAboutMeRepository();
+        }
+    }
+
     /**
      * @inheritDoc
      */
     public function add(string $name, string $text) 
     {
+        $this->getRepository();
+
         if($this->has($name)) {
             throw new TableHaveThisExeption();
         }
@@ -29,6 +37,8 @@ class TextAboutMeService implements TextAboutMeServiceInterface
      */
     public function delete(string $name) 
     {
+        $this->getRepository();
+
         if (!$this->has($name)) {
             throw new DontHaveModelExeption();
         }
@@ -41,6 +51,8 @@ class TextAboutMeService implements TextAboutMeServiceInterface
      */
     public function edit(Model $textAboutMe, string $parameter, string $changedData) 
     {
+        $this->getRepository();
+
         $name = $textAboutMe->getName();
         if (!$this->has($name)) {
             throw new DontHaveModelExeption();
@@ -54,6 +66,8 @@ class TextAboutMeService implements TextAboutMeServiceInterface
      */
     public function get(string $name): Model 
     {
+        $this->getRepository();
+
         if (!$this->has($name)) {
             throw new DontHaveModelExeption();
         }
@@ -67,6 +81,8 @@ class TextAboutMeService implements TextAboutMeServiceInterface
      */
     public function has(string $name): bool 
     {
+        $this->getRepository();
+
         $textAboutMe = $this->repository->get($name);
 
         if($textAboutMe !== null) {

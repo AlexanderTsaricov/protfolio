@@ -14,7 +14,10 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
      * @inheritDoc
      */
     public function add(string $text, string $name): TextAboutMe {
-        $newText = new TextAboutMe($name, $text);
+        $newText = new TextAboutMe();
+        $newText->setName($name);
+        $newText->setText($text);
+        $newText->save();
         return $newText;
     }
 
@@ -50,9 +53,9 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function get(string $name): Model
+    public function get(string $name): Model|null
     {
-        $textAboutMe = TextAboutMe::where('name', $name)->firstOrFail();
+        $textAboutMe = TextAboutMe::where('name', $name)->first();
         return $textAboutMe;
     }
 }

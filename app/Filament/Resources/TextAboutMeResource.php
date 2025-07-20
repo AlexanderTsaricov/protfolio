@@ -35,9 +35,8 @@ class TextAboutMeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->sortable(),
                 TextColumn::make('name'),
-                TextColumn::make('text')->sortable()
+                TextColumn::make('text')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
