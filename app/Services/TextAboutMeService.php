@@ -39,14 +39,13 @@ class TextAboutMeService implements TextAboutMeServiceInterface
     /**
      * @inheritDoc
      */
-    public function edit(string $name, string $parameter, string $changedData) 
+    public function edit(Model $textAboutMe, string $parameter, string $changedData) 
     {
+        $name = $textAboutMe->getName();
         if (!$this->has($name)) {
             throw new DontHaveModelExeption();
         }
-
-        $textAboutMe = $this->get($name);
-        $textAboutMe = $this->repository->edit($textAboutMe, $parameter, $changedData);
+        $this->repository->edit($textAboutMe, $parameter, $changedData);
         return $textAboutMe;
     }
 

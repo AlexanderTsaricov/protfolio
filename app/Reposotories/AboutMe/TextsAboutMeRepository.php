@@ -31,8 +31,7 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
                 $textAboutMe->setText($changeString);
                 break;
             default:
-                new InvalidParameterException("This model don`t have parameter $parameter");
-                break;
+                throw new InvalidParameterException("This model don`t have parameter $parameter");
         }
 
         $textAboutMe->save();
@@ -51,9 +50,9 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function get(string $name): Model|null 
+    public function get(string $name): Model
     {
-        $textAboutMe = TextAboutMe::where('name', $name)->first();
+        $textAboutMe = TextAboutMe::where('name', $name)->firstOrFail();
         return $textAboutMe;
     }
 }

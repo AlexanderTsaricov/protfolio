@@ -13,7 +13,9 @@ class ListTextAboutMes extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->label('Texts')
+                ->icon('document-text'),
         ];
     }
 }

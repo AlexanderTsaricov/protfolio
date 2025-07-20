@@ -12,7 +12,7 @@ interface TextAboutMeServiceInterface
 
     public function get(string $name):Model;
 
-    public function edit(string $name, string $parameter, string $changedData);
+    public function edit(Model $textAboutMe, string $parameter, string $changedData);
 
     public function has(string $name):bool;
 }
