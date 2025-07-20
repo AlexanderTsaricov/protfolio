@@ -9,7 +9,7 @@ interface TextsAboutMeRepositoryInterface
      * Add row to table texts_about_me
      * @return string
      */
-    public function add(string $text, string $name):Model;
+    public function add(string $text, string $name, string $type, string $subtype):Model;
 
     /**
      * Delete row from table texts_about_me

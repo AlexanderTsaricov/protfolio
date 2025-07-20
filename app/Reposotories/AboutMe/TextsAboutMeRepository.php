@@ -13,10 +13,12 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function add(string $text, string $name): TextAboutMe {
+    public function add(string $text, string $name, string $type, string $subtype): TextAboutMe {
         $newText = new TextAboutMe();
         $newText->setName($name);
         $newText->setText($text);
+        $newText->setType($type);
+        $newText->setSubtype($subtype);
         $newText->save();
         return $newText;
     }
@@ -32,6 +34,12 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
                 break;
             case 'text':
                 $textAboutMe->setText($changeString);
+                break;
+            case 'type':
+                $textAboutMe->setType($changeString);
+                break;
+            case 'subtype':
+                $textAboutMe->setSubtype($changeString);
                 break;
             default:
                 throw new InvalidParameterException("This model don`t have parameter $parameter");
