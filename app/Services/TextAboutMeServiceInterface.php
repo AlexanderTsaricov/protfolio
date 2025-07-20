@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 interface TextAboutMeServiceInterface
 {
-    public function add(string $name, string $text);
+    public function add(string $name, string $text, string $type, string $subtype);
 
     public function delete(string $name);
 

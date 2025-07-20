@@ -20,7 +20,7 @@ class TextAboutMeService implements TextAboutMeServiceInterface
     /**
      * @inheritDoc
      */
-    public function add(string $name, string $text) 
+    public function add(string $name, string $text, string $type, string $subtype) 
     {
         $this->getRepository();
 
@@ -28,7 +28,7 @@ class TextAboutMeService implements TextAboutMeServiceInterface
             throw new TableHaveThisExeption();
         }
 
-        $textAboutMe = $this->repository->add($text, $name);
+        $textAboutMe = $this->repository->add($text, $name, $type,  $subtype);
         return $textAboutMe;
     }
 
