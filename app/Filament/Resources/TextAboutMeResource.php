@@ -6,6 +6,7 @@ use App\Filament\Resources\TextAboutMeResource\Pages;
 use App\Filament\Resources\TextAboutMeResource\RelationManagers;
 use App\Models\TextAboutMe;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -26,8 +27,36 @@ class TextAboutMeResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name'),
-                Textarea::make('text')
+                TextInput::make('name')
+                ->required(),
+                Textarea::make('text'),
+                Select::make('type')
+                    ->options([
+                        'personal-info' => 'personal',
+                        'professional-info' => 'professional'
+                    ])
+                    ->reactive()
+                    ->required(),
+                Select::make('subtype')
+                    ->options(function (callable $get) {
+                        $type = $get('type');
+                        if ($type == 'personal-info') {
+                            return [
+                                'interests' => 'interests',
+                                'education' => 'education'
+                            ];
+                        }
+
+                        if ($type == 'professional-info') {
+                            return [
+                                'front-end' => 'front-end',
+                                'back-end' => 'back-end'
+                            ];
+                        }
+
+                        return [];
+                    })->reactive()
+                    ->required()
             ]);
     }
 
@@ -36,7 +65,9 @@ class TextAboutMeResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('text')
+                TextColumn::make('text'),
+                TextColumn::make('type'),
+                TextColumn::make('subtype')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
