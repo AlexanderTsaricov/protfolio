@@ -24,7 +24,7 @@ class CreateTextAboutMe extends CreateRecord
     protected function handleRecordCreation(array $data): TextAboutMe
     {
         $this->getService();
-        $newTextAboutMe = $this->service->add($data['name'], $data['text']);
+        $newTextAboutMe = $this->service->add($data['name'], $data['text'], $data['type'], $data['subtype']);
         return $newTextAboutMe;
     }
 }
