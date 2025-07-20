@@ -6,6 +6,8 @@ use App\Filament\Resources\TextAboutMeResource\Pages;
 use App\Filament\Resources\TextAboutMeResource\RelationManagers;
 use App\Models\TextAboutMe;
 use Filament\Forms;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -24,7 +26,8 @@ class TextAboutMeResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name'),
+                Textarea::make('text')
             ]);
     }
 
@@ -32,15 +35,16 @@ class TextAboutMeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('Name'),
-                TextColumn::make('Text')
+                TextColumn::make('id')->sortable(),
+                TextColumn::make('name'),
+                TextColumn::make('text')->sortable()
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\ForceDeleteBulkAction::make(),
                 ]),
             ]);
     }
