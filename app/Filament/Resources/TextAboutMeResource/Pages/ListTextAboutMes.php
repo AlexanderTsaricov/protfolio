@@ -15,7 +15,7 @@ class ListTextAboutMes extends ListRecords
         return [
             Actions\CreateAction::make()
                 ->label('Texts')
-                ->icon('document-text'),
+                ->icon('heroicon-o-document-text'),
         ];
     }
 }

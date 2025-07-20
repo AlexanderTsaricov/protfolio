@@ -30,7 +30,7 @@ class TextAboutMe extends Model
         $this->name = $name;
     }
 
-    public function __construct(string $name, string $text) {
+    public function __construct(string $name = 'noname', string $text = '') {
         $this->name = $name;
         $this->text = $text;
     }
