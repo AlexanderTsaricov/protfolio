@@ -99,4 +99,14 @@ class TextAboutMeResource extends Resource
     {
         return parent::getEloquentQuery();
     }
+
+    public static function getLabel(): string
+    {
+        return 'Text about me';
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return 'Texts about me';
+    }
 }

@@ -50,4 +50,14 @@ class LanguageResource extends Resource
             'edit' => Pages\EditLanguage::route('/{record}/edit'),
         ];
     }
+
+    public static function getLabel(): string
+    {
+        return 'Language projects';
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return 'Languages projects';
+    }
 }
