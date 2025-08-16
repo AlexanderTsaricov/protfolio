@@ -7,13 +7,13 @@ class LanguageInfoDTO
     public string $name;
     public ?string $text;
 
-    public string $type;
+    public ?string $type;
 
     public ?string $changedArg;
 
     public ?string $changedArgName;
     
-    public function __construct(string $name, string $type, ?string $text = null, ?string $changedArg = null, ?string $changedArgName) {
+    public function __construct(string $name, ?string $type = null, ?string $text = null, ?string $changedArg = null, ?string $changedArgName = null) {
         $this->name = $name;
         $this->text = $text;
         $this->type = $type;
