@@ -2,10 +2,9 @@
 
 namespace App\Reposotories;
 
-
 interface RepositoryInterface 
 {
-    public function getAll(): array;
+    public function getAll();
 
     public function get(object $dto):object;
 

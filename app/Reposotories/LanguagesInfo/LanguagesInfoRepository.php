@@ -53,8 +53,7 @@ class LanguagesInfoRepository implements RepositoryInterface
     {
         $this->dtoCheck($dto);
         $this->hasModelCheck($dto);
-
-        if ($dto->changedArg && $dto->changedArgName)
+        if (empty($dto->changedArg) || empty($dto->changedArgName))
         {
             throw new InvalidArgumentException('Required arguments (changedArg or changedArgName) don`t found in dto');
         }
@@ -107,7 +106,7 @@ class LanguagesInfoRepository implements RepositoryInterface
     {
         $this->dtoCheck($dto);
 
-        $laguageInfo = LanguageInfo::where('name', $dto->name)::first();
+        $laguageInfo = LanguageInfo::where('name', $dto->name)->first();
 
         if ($laguageInfo) 
         {

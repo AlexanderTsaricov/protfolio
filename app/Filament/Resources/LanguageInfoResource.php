@@ -40,8 +40,9 @@ class LanguageInfoResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('Name'),
-                TextColumn::make('Text')
+                TextColumn::make('name'),
+                TextColumn::make('text'),
+                TextColumn::make('type')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -65,7 +66,7 @@ class LanguageInfoResource extends Resource
         return [
             'index' => Pages\ListLanguageInfos::route('/'),
             'create' => Pages\CreateLanguageInfo::route('/create'),
-            'edit' => Pages\EditLanguageInfo::route('/{record}/edit'),
+            'edit' => Pages\EditLanguageInfo::route('/{record:name}/edit'),
         ];
     }
 

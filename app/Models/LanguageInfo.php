@@ -8,4 +8,9 @@ class LanguageInfo extends Model
 {
     protected $table = 'languages_info';
     protected $fillable = ['name', 'text', 'type'];
+
+    public function getRouteKeyName(): string
+    {
+        return 'name';
+    }
 }

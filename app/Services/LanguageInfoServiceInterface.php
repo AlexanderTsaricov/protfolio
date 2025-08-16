@@ -2,12 +2,13 @@
 
 namespace App\Services;
 
+use PhpParser\Node\Expr\Cast\Object_;
+
 interface LanguageInfoServiceInterface
 {
-    public function getAll(): array;
+    public function getAll();
 
     public function get(string $name):object;
-
     public function remove(string $name);
 
     public function edit(string $name, string $changedProperty, string $propertyName):object;
