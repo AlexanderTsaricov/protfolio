@@ -39,7 +39,7 @@ class PageController extends Controller
         $codes = CodeSnippet::all();
         $service = new TextAboutMeService();
         $languageService = new LanguageInfoService();
-
+        $arrayModels = [];
         $filtredByMenu = $service->getAll()->filter(function ($text) use ($selectedMenu) {
             return $text->getType() == $selectedMenu;
         });
