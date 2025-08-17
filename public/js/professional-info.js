@@ -1,5 +1,5 @@
-import { buttonEvent } from "./info-functions.js";
 import { setCloseEventToTabs } from "./info-functions.js";
+import { addButtonEventsToAll } from "./info-functions.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const globalInfoNameBlock = "professionalInfoBlock";
@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activeContentName: "",
         contentTabs: document.querySelector("#contentTabs"),
         contentTabsNames: [],
-        contentObject: {
-            null: "",
-        },
+        contentObject: { null: "" },
         contentBox: document.querySelector("#contentBox"),
     };
 
@@ -28,10 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
         visualBasic: document.querySelector("#visualBasic"),
     };
 
-    setCloseEventToTabs(state, globalInfoNameBlock);
-    for (const key in buttons) {
-        if (buttons.hasOwnProperty(key)) {
-            buttonEvent(key, buttons[key], state, globalInfoNameBlock);
-        }
+    const buttonsObj = {};
+    for (const [key, button] of Object.entries(buttons)) {
+        buttonsObj[key] = { button: button, event: false };
     }
+
+    setCloseEventToTabs(state, globalInfoNameBlock, buttonsObj);
+    addButtonEventsToAll(state, globalInfoNameBlock, buttonsObj);
 });

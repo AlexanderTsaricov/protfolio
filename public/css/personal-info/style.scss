@@ -61,6 +61,11 @@
     }
 }
 
+
+.unactive {
+    display: none !important;
+}
+
 .tabBox {
     border-left: 1px solid var(--theme-theme-stroke);
     max-width: 242px;

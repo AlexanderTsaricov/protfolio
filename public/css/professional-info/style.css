@@ -96,6 +96,10 @@
   cursor: pointer;
 }
 
+.unactive {
+  display: none !important;
+}
+
 #svgEducation {
   fill: var(--primitive-indigo-500);
 }

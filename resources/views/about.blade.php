@@ -41,8 +41,18 @@
             </div>
             <div class="selectedContentBox">
                 <div class="selectedContentBox_tabs" id="contentTabs">
+                    @if ($details->getSmallDetails())
+                        @foreach ($details->getSmallDetails() as $smallDetails)
+                            @include('components.details-renderer', ['details' => $details, 'renderAsTab' => true])
+                        @endforeach
+                    @endif
                 </div>
                 <div class="selectedContentBox_content" id="contentBox">
+                    @if ($details->getSmallDetails())
+                        @foreach ($details->getSmallDetails() as $smallDetails)
+                            @include('components.details-renderer', ['details' => $details])
+                        @endforeach
+                    @endif
                 </div>
                 <div class="selectedContentBox_codeSnippetBox">
                     <h4 class="selectedContentBox_headerText">// Code snippet showcase:</h4>
