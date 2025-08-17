@@ -11,9 +11,9 @@
                 </summary>
                 @foreach ($smallDetails->getElements() as $element)
                     <div class="personalInfoBlock_smallBox">
-                        <div class="personalInfoBlock_elementBox">
+                        <div class="personalInfoBlock_elementBox" id="{{ $element['id'] }}">
                             @include('components.svg-components.two-level-svg-img')
-                            <p class="personalInfoBlock_summary" id="{{ $element['id'] }}">{{ $element['name'] }}</p>
+                            <p class="personalInfoBlock_summary">{{ $element['name'] }}</p>
                         </div>
                     </div>
                 @endforeach

@@ -16,6 +16,23 @@ class PageController extends Controller
         return view('welcome');
     }
 
+    private function separateTextToArray(String $text, int $countLetters)
+    {
+        $words = preg_split('/\s+/', trim($text));
+        $chunks = [];
+        $index = 0;
+        $chunks[$index] = '';
+        foreach ($words as $word) {
+            $chunks[$index] .= $word . ' ';
+            if (strlen($chunks[$index]) > $countLetters) {
+                $index += 1;
+                $chunks[$index] = '';
+            }
+        }
+
+        return $chunks;
+    }
+
     public function about($selectedMenu)
     {
         $codes = CodeSnippet::all();
@@ -32,7 +49,8 @@ class PageController extends Controller
             $elements = $group->map(function ($model) {
                 return [
                     'id' => $model->getName(),
-                    'name' => $model->getName()
+                    'name' => $model->getName(),
+                    'text' => $this->separateTextToArray($model->getText(), 29)
                 ];
             })->values()->all();
 

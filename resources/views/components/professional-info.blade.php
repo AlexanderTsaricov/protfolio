@@ -8,5 +8,4 @@
 </div>
 
 
-<script type="module" src="{{ asset('js/info-functions.js') }}"></script>
-<script type="module" src="{{ asset('js/professional-info.js') }}"></script>
+<script type="module" src="{{ asset('js/content-controller.js') }}"></script>
