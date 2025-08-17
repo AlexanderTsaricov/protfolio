@@ -25,7 +25,7 @@ class LanguageInfoService implements LanguageInfoServiceInterface
     {
         $this -> getRepository();
 
-        $dto = new LanguageInfoDTO($name);
+        $dto = new LanguageInfoDTO(name: $name);
         return $this->repository->get($dto);
     }
 

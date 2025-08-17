@@ -41,21 +41,18 @@
             </div>
             <div class="selectedContentBox">
                 <div class="selectedContentBox_tabs" id="contentTabs">
-                    @foreach ($details->getSmallDetails() as $smallDetails)
-                        @foreach ($smallDetails->getElements() as $element)
-                            @php
-                                $tab = new \App\Http\Classes\Tab($element['name'], $element['name']);
-                            @endphp
-                            @include('components.tab', ['tab' => $tab])
+                    @if ($details->getSmallDetails())
+                        @foreach ($details->getSmallDetails() as $smallDetails)
+                            @include('components.details-renderer', ['details' => $details, 'renderAsTab' => true])
                         @endforeach
-                    @endforeach
+                    @endif
                 </div>
                 <div class="selectedContentBox_content" id="contentBox">
-                    @foreach ($details->getSmallDetails() as $smallDetails)
-                        @foreach ($smallDetails->getElements() as $element)
-                            @include('components.education', ['text' => $element['text'], 'small' => false, 'id' => 'content_' . $element['name']])
+                    @if ($details->getSmallDetails())
+                        @foreach ($details->getSmallDetails() as $smallDetails)
+                            @include('components.details-renderer', ['details' => $details])
                         @endforeach
-                    @endforeach
+                    @endif
                 </div>
                 <div class="selectedContentBox_codeSnippetBox">
                     <h4 class="selectedContentBox_headerText">// Code snippet showcase:</h4>

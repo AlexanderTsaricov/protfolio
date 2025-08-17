@@ -13,4 +13,5 @@ class LanguageInfo extends Model
     {
         return 'name';
     }
+    
 }

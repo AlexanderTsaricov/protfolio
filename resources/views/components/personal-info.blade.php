@@ -1,5 +1,5 @@
 <div class="personalInfoBlock">
-    @include('components.text-details', ['data' => $selectedMenu])
+    @include('components.head-details', ['data' => $selectedMenu])
     @include('components.contacts-details-block')
 </div>
 
