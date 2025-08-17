@@ -91,4 +91,10 @@ class TextAboutMeService implements TextAboutMeServiceInterface
             return false;
         }
     }
+
+    public function getAll()
+    {
+        $this->getRepository();
+        return $this->repository->getAll();
+    }
 }

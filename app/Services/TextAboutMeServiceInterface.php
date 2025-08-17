@@ -15,4 +15,6 @@ interface TextAboutMeServiceInterface
     public function edit(Model $textAboutMe, string $parameter, string $changedData);
 
     public function has(string $name):bool;
+
+    public function getAll();
 }

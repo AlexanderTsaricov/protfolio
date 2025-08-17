@@ -29,5 +29,7 @@ interface TextsAboutMeRepositoryInterface
 
     public function get(string $name): Model|null;
 
+    public function getAll();
+
 }
 

@@ -66,4 +66,9 @@ class TextsAboutMeRepository implements TextsAboutMeRepositoryInterface
         $textAboutMe = TextAboutMe::where('name', $name)->first();
         return $textAboutMe;
     }
+
+    public function getAll()
+    {
+        return TextAboutMe::all();
+    }
 }
