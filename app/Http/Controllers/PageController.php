@@ -40,6 +40,9 @@ class PageController extends Controller
         $service = new TextAboutMeService();
         $languageService = new LanguageInfoService();
         $arrayModels = [];
+        $detailsArray = [];
+        $arrayLanguageByTypeElemets = [];
+        $detailsLanguageArray = [];
         $filtredByMenu = $service->getAll()->filter(function ($text) use ($selectedMenu) {
             return $text->getType() == $selectedMenu;
         });
@@ -69,7 +72,7 @@ class PageController extends Controller
             $lanuageBigDetails = new Details('Languages', null, $detailsLanguageArray);
             $detailsArray[] = $lanuageBigDetails;
         }
-        
+
         $headDetails = new Details($selectedMenu, null, $detailsArray);
 
         return view('about', ['selectedMenu' => $selectedMenu, 'codes' => $codes, 'details' => $headDetails]);
