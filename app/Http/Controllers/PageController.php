@@ -80,11 +80,12 @@ class PageController extends Controller
 
     public function projects()
     {
+
         return view('projects');
     }
 
     public function contactMe()
     {
-        return view('contact-me', ['blocked' => false]);
+        return view('contact-me', ['blocked' => false, 'captchaId' => 1, 'captchaSrc' => 'storage/captches/1.png']);
     }
 }

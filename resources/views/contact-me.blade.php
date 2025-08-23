@@ -60,6 +60,13 @@
                             <textarea class="inputBox_inputMessage" name="message" rows="6" wrap="soft"
                                 id="messageInput" required></textarea>
                         </div>
+                        <div class="inputBox">
+                            <label class="inputBox_text" for="{{ $captchaId }}">Please write the text<br>drawn on the picture</label>
+                            <div class="captchaBox">
+                                <input class="inputBox_inputCaptcha" type="text" name="cactcha" id="{{ $captchaId }}" required>
+                                <img class="inputBox_captchaImg" src="{{ $captchaSrc }}" alt="captcha">
+                            </div>
+                        </div>
                         <input class="form_submit" type="submit" value="submit-message">
                     </form>
                 </div>

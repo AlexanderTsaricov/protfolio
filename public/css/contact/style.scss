@@ -92,7 +92,7 @@ body {
 .form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 5px;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -163,6 +163,32 @@ body {
         white-space: pre-wrap;
         overflow-wrap: break-word;
     }
+
+    &_inputCaptcha {
+        font-family: var(--font-family);
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--theme-foreground);
+        border: 1px solid var(--theme-theme-stroke);
+        border-radius: 8px 0 0 8px;
+        padding: 12px;
+        max-width: 360px;
+        background: var(--theme-theme-backdrop);
+        &:focus {
+            border: 1px solid var(--primitive-slate-300);
+        }
+    }
+
+    &_captchaImg {
+        max-width: 106px;
+        border: 1px solid var(--theme-theme-stroke);
+        border-radius: 0 8px 8px 0;
+    }
+}
+
+.captchaBox {
+    display: flex;
 }
 
 .code {
