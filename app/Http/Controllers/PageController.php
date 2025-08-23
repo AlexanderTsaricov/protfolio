@@ -7,8 +7,10 @@ use App\Models\Language;
 use App\Models\Project;
 use App\Services\LanguageInfoService;
 use App\Services\TextAboutMeService;
+use Arr;
 use Illuminate\Http\Request;
 use App\Http\Classes\Details;
+use App\Models\Captcha;
 
 class PageController extends Controller
 {
@@ -86,6 +88,13 @@ class PageController extends Controller
 
     public function contactMe()
     {
-        return view('contact-me', ['blocked' => false, 'captchaId' => 1, 'captchaSrc' => 'storage/captches/1.png']);
+        $captches = Captcha::all();
+        if (count($captches) != 0) {
+            $randCaptcha = Arr::random($captches->toArray());
+        } else {
+            $randCaptcha = null;
+        }
+        
+        return view('contact-me', ['blocked' => false, 'captchaBlock' => false, 'captcha' => $randCaptcha]);
     }
 }

@@ -39,13 +39,17 @@
 
         </div>
         <div class="content">
-            <div class="content_emptyBlock"></div>
+            <div class="content_emptyBlock">
+                @if ($blocked)
+                    <p class="blocked-text">Sorry, but your email is blocked!</p>
+                @endif
+                @if ($captchaBlock)
+                    <p class="blocked-text">You failed the CAPTCHA</p>
+                @endif
+            </div>
             <div class="content_contentBlock">
                 <div class="formBox">
                     <form class="form" action="{{ route('contact.send') }}" method="post">
-                        @if ($blocked)
-                            <p class="blocked-text">Sorry, but your email is blocked!</p>
-                        @endif
                         @csrf
                         <div class="inputBox">
                             <label for="name" class="inputBox_text">_name:</label>
@@ -60,13 +64,19 @@
                             <textarea class="inputBox_inputMessage" name="message" rows="6" wrap="soft"
                                 id="messageInput" required></textarea>
                         </div>
-                        <div class="inputBox">
-                            <label class="inputBox_text" for="{{ $captchaId }}">Please write the text<br>drawn on the picture</label>
-                            <div class="captchaBox">
-                                <input class="inputBox_inputCaptcha" type="text" name="cactcha" id="{{ $captchaId }}" required>
-                                <img class="inputBox_captchaImg" src="{{ $captchaSrc }}" alt="captcha">
+                        @if (isset($captcha) && $captcha != null)
+                            <div class="inputBox">
+                                <label class="inputBox_text" for="{{ $captcha['id'] }}">Please write the text<br>drawn on
+                                    the
+                                    picture</label>
+                                <div class="captchaBox">
+                                    <input class="inputBox_inputCaptcha" type="text" name="captcha" required>
+                                    <input type="text" name="captchaID" hidden value="{{ $captcha['id'] }}">
+                                    <img class="inputBox_captchaImg" src="{{ 'storage/' . $captcha['link'] }}"
+                                        alt="captcha">
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         <input class="form_submit" type="submit" value="submit-message">
                     </form>
                 </div>
