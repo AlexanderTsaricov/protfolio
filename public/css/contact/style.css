@@ -118,7 +118,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  width: 372px;
+  width: 450px;
 }
 .inputBox_text {
   font-family: var(--font-family);
@@ -136,7 +136,7 @@ body {
   border: 1px solid var(--theme-theme-stroke);
   border-radius: 8px;
   padding: 12px;
-  max-width: 360px;
+  max-width: 450px;
   background: var(--theme-theme-backdrop);
 }
 .inputBox_input:focus {
@@ -151,7 +151,7 @@ body {
   border: 1px solid var(--theme-theme-stroke);
   border-radius: 8px;
   padding: 12px;
-  max-width: 372px;
+  max-width: 450px;
   min-height: 108px;
   background: var(--theme-theme-backdrop);
   white-space: pre-wrap;
@@ -166,16 +166,65 @@ body {
   border: 1px solid var(--theme-theme-stroke);
   border-radius: 8px 0 0 8px;
   padding: 12px;
-  max-width: 360px;
+  max-width: 450px;
   background: var(--theme-theme-backdrop);
 }
 .inputBox_inputCaptcha:focus {
   border: 1px solid var(--primitive-slate-300);
 }
 .inputBox_captchaImg {
-  max-width: 106px;
+  max-width: 183px;
   border: 1px solid var(--theme-theme-stroke);
   border-radius: 0 8px 8px 0;
+}
+.inputBox_personalDataBox {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputBox_personalCheckbox {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #888;
+  border-radius: 4px;
+  background-color: #1e1e1e;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 8px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.inputBox_personalCheckbox:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+.inputBox_personalCheckbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.inputBox_personalCheckbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.4);
+}
+
+.checkbox-label {
+  color: #ccc;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .captchaBox {

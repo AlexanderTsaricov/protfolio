@@ -46,6 +46,9 @@
                 @if ($captchaBlock)
                     <p class="blocked-text">You failed the CAPTCHA</p>
                 @endif
+                @if (!$personalData)
+                    <p class="blocked-text">In accordance with Russian legislation, submitting a message via this form requires your consent to the processing of personal data</p>
+                @endif
             </div>
             <div class="content_contentBlock">
                 <div class="formBox">
@@ -66,7 +69,7 @@
                         </div>
                         @if (isset($captcha) && $captcha != null)
                             <div class="inputBox">
-                                <label class="inputBox_text" for="{{ $captcha['id'] }}">Please write the text<br>drawn on
+                                <label class="inputBox_text" for="{{ $captcha['id'] }}">Please write the text drawn on
                                     the
                                     picture</label>
                                 <div class="captchaBox">
@@ -77,6 +80,10 @@
                                 </div>
                             </div>
                         @endif
+                        <div class="inputBox_personalDataBox">
+                            <label for="personalData" class="inputBox_text">Consent to the processing of personal data</label>
+                            <input class="inputBox_personalCheckbox" type="checkbox" name="personalData" id="personalData">
+                        </div>
                         <input class="form_submit" type="submit" value="submit-message">
                     </form>
                 </div>
@@ -111,6 +118,10 @@
                         <li class="code_line">
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">date: </span><span
                                 class="code_orange">"{{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}"</span>,
+                        </li>
+                        <li class="code_line">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="code_blue">personalData: </span><span
+                                class="code_orange" id="jsTextPersonalData">false</span>,
                         </li>
                         <li class="code_line">}</li>
                         <li class="code_line"></li>

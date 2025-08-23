@@ -21,8 +21,19 @@ class MailController extends Controller
         $captchaInput = Purifier::clean($request->input('captcha'), ['HTML.Allowed' => '']);
         $captchaId = $request->input('captchaID');
         $catchaRealText = Captcha::where('id', $captchaId)->value('text');
+        $personalData = $request->boolean('personalData');
         logger('INPUT: ' . $captchaInput);
         logger('REAL: ' . $catchaRealText);
+        if (!$personalData) {
+            $captches = Captcha::all();
+            if (count($captches) != 0) {
+                $randCaptcha = Arr::random($captches->toArray());
+            } else {
+                $randCaptcha = null;
+            }
+
+            return view('contact-me', ['blocked' => false, 'captchaBlock' => false, 'personalData' => false, 'captcha' => $randCaptcha]);
+        }
         if ($captchaInput !== $catchaRealText) {
             $captches = Captcha::all();
             if (count($captches) != 0) {
@@ -31,7 +42,7 @@ class MailController extends Controller
                 $randCaptcha = null;
             }
 
-            return view('contact-me', ['blocked' => false, 'captchaBlock' => true, 'captcha' => $randCaptcha]);
+            return view('contact-me', ['blocked' => false, 'captchaBlock' => true, 'personalData' => true, 'captcha' => $randCaptcha]);
         }
         if ($blockedMailService->isBlocked($email)) {
             $captches = Captcha::all();
@@ -41,12 +52,13 @@ class MailController extends Controller
                 $randCaptcha = null;
             }
 
-            return view('contact-me', ['blocked' => true, 'captchaBlock' => false, 'captcha' => $randCaptcha]);
+            return view('contact-me', ['blocked' => true, 'captchaBlock' => false, 'personalData' => true, 'captcha' => $randCaptcha]);
         }
         $data = $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|email|max:255',
             'message' => 'required|string',
+            'personalData' => 'accepted'
         ]);
 
         Mail::to('salispiligrim@yandex.ru')

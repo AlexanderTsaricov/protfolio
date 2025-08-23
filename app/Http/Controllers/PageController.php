@@ -95,6 +95,6 @@ class PageController extends Controller
             $randCaptcha = null;
         }
         
-        return view('contact-me', ['blocked' => false, 'captchaBlock' => false, 'captcha' => $randCaptcha]);
+        return view('contact-me', ['blocked' => false, 'captchaBlock' => false,'personalData' => true, 'captcha' => $randCaptcha]);
     }
 }
