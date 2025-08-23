@@ -12,6 +12,18 @@ emailInput.addEventListener("input", function (event) {
     emailCode.textContent = `"${event.target.value}"`;
 });
 
+const personalData = document.querySelector('#personalData');
+personalData.addEventListener('click', function () {
+    const jsTextPersonalData = document.querySelector('#jsTextPersonalData');
+    const boolPersonalData = personalData.checked;
+
+    if (boolPersonalData) {
+        jsTextPersonalData.textContent = 'true';
+    } else {
+        jsTextPersonalData.textContent = 'false';
+    }
+})
+
 const messageInput = document.querySelector("#messageInput");
 
 messageInput.addEventListener("input", function (event) {

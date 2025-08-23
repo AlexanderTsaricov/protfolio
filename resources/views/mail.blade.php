@@ -14,6 +14,9 @@
         <p>Date: {{now()->toDateString()}}</p>
         <p>Name: {{$data['name']}}</p>
         <p>Message: {{$data['message']}}</p>
+        @if ($data['personalData'])
+            <p>Consent to the processing of personal data has been obtained.</p>
+        @endif
     </div>
 </body>
 
