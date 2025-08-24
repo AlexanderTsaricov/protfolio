@@ -157,6 +157,10 @@ body {
   color: var(--primitive-grey-50);
 }
 
+.invisibleProject {
+  display: none;
+}
+
 @media (max-width: 845px) {
   .main {
     flex-direction: column;

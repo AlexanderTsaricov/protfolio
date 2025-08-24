@@ -1,88 +1,41 @@
-document.addEventListener("DOMContentLoaded", async function () {
-    const contentBox = document.querySelector(".contentBox");
-    const languageBox = document.querySelector(".projectsSelectBox");
+document.addEventListener('DOMContentLoaded', function () {
+    const selectBoxes = document.querySelectorAll('.projectsSelectBox_label');
+    const listSelected = [];
 
-    const [projects, languages] = await Promise.all([
-        getData("projects"),
-        getData("languages"),
-    ]);
-
-    projects.forEach((project) => {
-        project.html = "";
-        project.html = getHTMLprojectBox(project);
+    selectBoxes.forEach((selectBox) => {
+        const checkbox = selectBox.querySelector('.checkboxLanguage');
+        checkbox.addEventListener('change', function () {
+            const checked = checkbox.checked;
+            if (!checked) {
+                const technologia = selectBox.querySelector('.projectsSelectBox_span').textContent;
+                const indexInList = listSelected.indexOf(technologia);
+                listSelected.splice(indexInList, 1);
+            } else {
+                const technologia = selectBox.querySelector('.projectsSelectBox_span').textContent;
+                listSelected.push(technologia);
+            }
+            rerenderProjects(listSelected);
+        });
     });
-
-    languages.forEach((language) => {
-        languageBox.innerHTML += getHTMLanguageBox(language);
-    });
-
-    languageBox.addEventListener("click", function (event) {
-        if (
-            event.target.classList.contains("projectsSelectBox_label") ||
-            event.target.type === "checkbox"
-        ) {
-            const languageButtons =
-                document.querySelectorAll(".checkboxLanguage");
-            const selected = getSelectedProjects(projects, languageButtons);
-            addContent(contentBox, selected);
-        }
-    });
-
-    const selectedProjects = getSelectedProjects(projects, languages);
-    addContent(contentBox, selectedProjects);
 });
 
-async function getData(resourse) {
-    const response = await fetch(`/getProjectsData/${resourse}`);
-    const data = await response.json();
-    return data;
-}
 
-function getHTMLprojectBox(project) {
-    return `
-        <div class="projectBox">
-            <p class="projectBox_name">${project.name}</p>
-            <img class="projectBox_image" src="${window.location.origin}/storage/${project.image}" alt="Project image">
-            <div class="projectBox_descriptionBox">
-                <p class="projectBox_description">${project.description}</p>
-                <a class="projectBox_link" href="${project.link}" target="_blank"
-                    rel="noopener noreferrer">view-project</a>
-            </div>
-        </div>
-    `;
-}
-
-function getHTMLanguageBox(language) {
-    return `
-        <label class="projectsSelectBox_label">
-            <input 
-              class="checkboxLanguage" 
-              type="checkbox" 
-              name="language[]" 
-              value="${language.id}" 
-            />
-            <span class="projectsSelectBox_span">${language.name}</span>
-        </label>
-    `;
-}
-
-function getSelectedProjects(projects, languagesBtn) {
-    const ids = Array.from(languagesBtn)
-        .filter((languageBtn) => languageBtn.checked)
-        .map((languageBtn) => languageBtn.value);
-    if (ids.length == 0) {
-        return projects;
-    } else {
-        const selectedProjects = projects.filter((project) => {
-            return ids.every((id) => project.languages.includes(id));
+function rerenderProjects(selectedTechnologies) {
+    const projects = document.querySelectorAll('.projectBox');
+    console.log(selectedTechnologies);
+    if (selectedTechnologies.length != 0) {
+        projects.forEach((project) => {
+            const jsSelectTechnologies = project.querySelectorAll('.jsSelectTechnologies');
+            const listTechnologies = Array.from(jsSelectTechnologies).map(item => item.textContent);
+            if (!selectedTechnologies.some(item => listTechnologies.includes(item))) {
+                project.classList.add('invisibleProject');
+            } else if (project.classList.contains('invisibleProject')) {
+                project.classList.remove('invisibleProject');
+            }
         });
-        return selectedProjects;
-    }
-}
-
-function addContent(box, projects) {
-    box.innerHTML = "";
-    projects.forEach((project) => {
-        box.innerHTML += project.html;
-    });
+    } else {
+        projects.forEach((project) => {
+            project.classList.remove('invisibleProject');
+        });
+    } 
 }

@@ -82,8 +82,10 @@ class PageController extends Controller
 
     public function projects()
     {
+        $projects = Project::all();
+        $languages = Language::all();
 
-        return view('projects');
+        return view('projects', ['projectsSelect' => $languages, 'projects' => $projects]);
     }
 
     public function contactMe()

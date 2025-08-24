@@ -15,10 +15,16 @@
             <details class="leftMenuBox_details">
                 <summary class="leftMenuBox_summary">projects</summary>
                 <div class="projectsSelectBox">
+                    @foreach ($projectsSelect as $projectSelect)
+                        @include('components.project-select', ['language' => $projectSelect])
+                    @endforeach
                 </div>
             </details>
         </div>
         <div class="contentBox">
+            @foreach ($projects as $project)
+                @include('components.project-box', ['project' => $project])
+            @endforeach
         </div>
     </main>
     @include('components.footer')
